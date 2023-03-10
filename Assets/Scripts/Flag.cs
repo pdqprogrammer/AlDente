@@ -13,6 +13,7 @@ public class Flag : MonoBehaviour
     {
         Debug.Log("Setting scene to " + nextScene);
 
-        SceneManager.LoadScene(nextScene);
+        SceneManager.LoadSceneAsync("SampleScene", LoadSceneMode.Single);
+        //SceneManager.LoadScene(nextScene);
     }
 }

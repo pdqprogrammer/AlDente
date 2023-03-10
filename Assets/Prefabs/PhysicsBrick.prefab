@@ -124,3 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4436c1712a289418aab16c48f76d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  platformState: 0
+  maxTimer: 1
+  canHeat: 0
+  destroyOnJump: 0
