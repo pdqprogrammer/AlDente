@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,8 +16,17 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Update()
+    {
+        //Listen for key press and reset the scene
+        if (Input.GetKey(KeyCode.Alpha0))
+        {
+            SceneManager.LoadSceneAsync("SampleScene", LoadSceneMode.Single);
+        }
+    }
+
     ///PUBLIC FUNCTIONS///
-    
+
     //function to change the game state and can do certain functions based on the state...
     public static void ChangeGameState(GameStates state)
     {
