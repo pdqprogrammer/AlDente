@@ -9,6 +9,13 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public AudioSource audioSource;
 
+    private Vector2 initialPos = Vector2.zero;
+
+    private void Awake()
+    {
+        initialPos = transform.position;
+    }
+
     // Update is called once per frame, around 60 times a second
     void Update()
     {
@@ -46,5 +53,10 @@ public class PlayerController : MonoBehaviour
         {
             jumper.SetGravityReduced(false);
         }
+    }
+
+    public void ResetPos()
+    {
+        transform.position = initialPos;
     }
 }

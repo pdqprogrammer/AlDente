@@ -16,15 +16,17 @@ public class Platform : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        //TODO add functionality that changes the state of the platform
+        //TODO let player controller know if firm or soft for physics
+        //TODO break platform if Fragile
+    }
+
+    public enum PlatformState
+    {
+        FIRM,
+        SOFT,
+        FRAGILE
     }
 }
 
-public enum PlatformState
-{
-    FIRM,
-    SOFT,
-    FRAGILE
-}
