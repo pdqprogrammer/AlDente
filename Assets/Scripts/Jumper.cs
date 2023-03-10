@@ -17,6 +17,12 @@ public class Jumper : MonoBehaviour
     // While the spacebar is held, gravity is reduced. Set this to 1 to disable
     public float gravityScaleWhileJumpHeld = 0.5f;
 
+    //Modified to be added to jumps
+    public float jumpModifier = 1.0f;
+
+    //private value set when jump is being modified
+    private bool isJumpModified = false;
+
     //In this script, the other scripts it needs are grabbed automatically. So we can make them private
     //Private variables are not visible in the inspector, but they still exist
     private Rigidbody2D myRigidBody2D;
@@ -44,14 +50,25 @@ public class Jumper : MonoBehaviour
         //As long as we are on the ground
         if (IsOnGround())
         {
+            //value to hold the modified jump
+            float jumpForceModified = jumpForce;
+
+            //check if jump is modified and update value for jumping
+            if (isJumpModified)
+            {
+                jumpForceModified *= jumpModifier;
+            }
+
             //Jump!
-            myRigidBody2D.velocity += new Vector2(0f, jumpForce);
+            myRigidBody2D.velocity += new Vector2(0f, jumpForceModified);
 
             //If I'm jumping too fast, slow me down
-            if (myRigidBody2D.velocity.y > jumpForce)
+            if (myRigidBody2D.velocity.y > jumpForceModified)
             {
-                myRigidBody2D.velocity = new Vector2(myRigidBody2D.velocity.x, jumpForce);
+                myRigidBody2D.velocity = new Vector2(myRigidBody2D.velocity.x, jumpForceModified);
             }
+
+            isJumpModified = false;
         }
     }
 
@@ -86,5 +103,23 @@ public class Jumper : MonoBehaviour
         Vector2 startPosition = new Vector2(transform.position.x, transform.position.y + groundCheckOffset);
         Gizmos.color = Color.red;
         Gizmos.DrawRay(startPosition, Vector3.down*groundCheckDistance);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //check if current object is player
+        if (gameObject.tag.Equals("Player"))
+        {
+            //check if collided object is a platform
+            if (collision.gameObject.tag.Equals("Platform"))
+            {
+                //get platform script and if allows for high jump modify jump physics
+                Platform platform = collision.gameObject.GetComponent<Platform>();
+                if (platform.IsHighJump())
+                {
+                    isJumpModified = true;
+                }
+            }
+        }
     }
 }

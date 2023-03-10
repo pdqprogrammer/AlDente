@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _Instance;
 
     private GameStates gameState = GameStates.START;
+    private int score = 0;
 
     /**UNITY FUNCTIONS**/
     private void Awake()
@@ -15,10 +16,26 @@ public class GameManager : MonoBehaviour
     }
 
     ///PUBLIC FUNCTIONS///
+    
+    //function to change the game state and can do certain functions based on the state...
     public static void ChangeGameState(GameStates state)
     {
         _Instance.gameState = state;
     }
+
+    //function to increase game score
+    public static void IncreaseScore(int increase)
+    {
+        _Instance.score += increase;
+    }
+
+    //function to reset game score
+    public static void ResetScore()
+    {
+        _Instance.score = 0;
+    }
+
+    //TODO create reset function that will revert everything back to its original state
 
     ///SETUP SINGLETON SAFELY///
     private static GameManager Instance
