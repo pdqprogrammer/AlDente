@@ -53,7 +53,7 @@ public class Platform : MonoBehaviour
         {
             dropTime += Time.deltaTime;
 
-            Vector3 direction = new Vector3(0, -1 * Time.deltaTime * dropSpeed, 0);
+            Vector3 direction = new Vector3(0, Time.deltaTime * -dropSpeed, 0);
             Vector3 updatedPosition = transform.position + direction;
             transform.position = updatedPosition;
 
@@ -119,26 +119,6 @@ public class Platform : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //check if heat trigger entered
-        if (collision.gameObject.tag.Equals("Heat"))
-        {
-            //if can heat then change state of the pasta
-            if (canHeat)
-            {
-                if(platformState == PlatformState.FIRM)
-                {
-                    platformState = PlatformState.SOFT;
-                }
-                else if(platformState == PlatformState.SOFT)
-                {
-                    platformState = PlatformState.FRAGILE;
-                }
-            }
-        }
-    }
-
     /**PRIVATE FUNCTIONS**/
     private void DestroyOnAnimate()
     {
@@ -147,7 +127,6 @@ public class Platform : MonoBehaviour
 
 
     /**PUBLIC FUNCTIONS**/
-
     public bool IsHighJump()
     {
         if(platformState == PlatformState.SOFT)
@@ -157,6 +136,22 @@ public class Platform : MonoBehaviour
         else
         {
             return false;
+        }
+    }
+
+    public void HeatPlatform()
+    {
+        if (canHeat)
+        {
+            //if can heat then change state of the pasta
+            if (platformState == PlatformState.FIRM)
+            {
+                platformState = PlatformState.SOFT;
+            }
+            else if (platformState == PlatformState.SOFT)
+            {
+                platformState = PlatformState.FRAGILE;
+            }
         }
     }
 

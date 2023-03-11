@@ -7,6 +7,8 @@ public class Hazard : MonoBehaviour
     [SerializeField]
     private HazardType hazardType = HazardType.DEATH;
 
+    //TODO consider value for heat that can impact the player
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,9 +30,22 @@ public class Hazard : MonoBehaviour
             if (hazardType == HazardType.DEATH)
             {
                 Debug.Log("Died");
-                
-                PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-                player.ResetPos();
+
+                GameManager.ChangeGameState(GameStates.GAMEOVER);
+                //TODO add in UI Manager to set state
+                GameManager.ResetGame();
+            }
+
+            return;
+        }
+
+        if (collision.gameObject.tag.Equals("Platform"))
+        {
+            //if hazard is death then change to death state
+            if (hazardType == HazardType.HEAT)
+            {
+                Platform platform = collision.gameObject.GetComponent<Platform>();
+                platform.HeatPlatform();
             }
         }
     }
@@ -39,6 +54,7 @@ public class Hazard : MonoBehaviour
     {
         SLOW,
         HURT,
-        DEATH
+        DEATH,
+        HEAT
     }
 }

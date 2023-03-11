@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Heat : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private float heatSpeed = 1.0f;
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        Vector3 direction = new Vector3(0, Time.deltaTime * heatSpeed, 0);
+        Vector3 updatedPosition = transform.position + direction;
+        transform.position = updatedPosition;
     }
 }
