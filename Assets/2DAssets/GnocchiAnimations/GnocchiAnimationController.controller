@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: InOnGround
+    m_ConditionEvent: IsOnGround
     m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: YVelocity
@@ -93,7 +93,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: InOnGround
+    m_ConditionEvent: IsOnGround
     m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: YVelocity
@@ -148,7 +148,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: InOnGround
+    m_ConditionEvent: IsOnGround
     m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: YVelocity
@@ -176,7 +176,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: InOnGround
+    m_ConditionEvent: IsOnGround
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Walking
@@ -204,7 +204,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: InOnGround
+    m_ConditionEvent: IsOnGround
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: YVelocity
@@ -232,7 +232,7 @@ AnimatorController:
   m_Name: GnocchiAnimationController
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: InOnGround
+  - m_Name: IsOnGround
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -272,7 +272,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: InOnGround
+    m_ConditionEvent: IsOnGround
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: YVelocity
@@ -388,7 +388,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: InOnGround
+    m_ConditionEvent: IsOnGround
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8789220160602760231}
@@ -413,7 +413,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: InOnGround
+    m_ConditionEvent: IsOnGround
     m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: YVelocity
@@ -441,7 +441,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: InOnGround
+    m_ConditionEvent: IsOnGround
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: YVelocity
