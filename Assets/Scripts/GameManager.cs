@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager _Instance;
 
-    private GameStates gameState = GameStates.START;
+    private GameStates gameState = GameStates.INGAME;
     private int score = 0;
 
     /**UNITY FUNCTIONS**/
@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         //Listen for key press and reset the scene
-        if (Input.GetKey(KeyCode.Alpha0))
+        if (Input.GetKey(KeyCode.Alpha0) && gameState != GameStates.INGAME)
         {
             SceneManager.LoadSceneAsync("SampleScene", LoadSceneMode.Single);
         }
@@ -31,6 +31,20 @@ public class GameManager : MonoBehaviour
     public static void ChangeGameState(GameStates state)
     {
         _Instance.gameState = state;
+
+        switch (state)
+        {
+            case GameStates.INGAME:
+                break;
+            case GameStates.MENU:
+                break;
+            case GameStates.GAMEOVER:
+                break;
+            case GameStates.WIN:
+                break;
+            default:
+                break;
+        }
     }
 
     //function to increase game score
