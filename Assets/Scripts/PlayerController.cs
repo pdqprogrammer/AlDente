@@ -24,15 +24,15 @@ public class PlayerController : MonoBehaviour
         //jumper.Velocity
         //mover.Velocity
         //jumper.IsOnGround
-
         animator.SetFloat("YVelocity", jumper.Velocity.y);
+        animator.SetBool("IsOnGround", jumper.IsOnGround());
 
         //Listen for key presses and move left
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             mover.AccelerateInDirection(new Vector2(-1, 0));
             spriteRenderer.flipX = true;
-            //animator.SetBool("Walking", true);
+            animator.SetBool("Walking", true);
             
         }
 
@@ -41,20 +41,19 @@ public class PlayerController : MonoBehaviour
         {
             mover.AccelerateInDirection(new Vector2(1, 0));
             spriteRenderer.flipX = false;
-            //animator.SetBool("Walking", true);
+            animator.SetBool("Walking", true);
         }
 
         if(Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A) ||
             Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D))
         {
-            //animator.SetBool("Walking", false);
+            animator.SetBool("Walking", false);
         }
 
         //Listen for key presses and jump
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
         {
             jumper.Jump();
-            animator.SetBool("IsOnGround", !jumper.IsOnGround());
 
             //Play a Jump Sound
             if (audioSource != null)
@@ -63,6 +62,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        //TODO see what this does
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
         {
             jumper.SetGravityReduced(true);
