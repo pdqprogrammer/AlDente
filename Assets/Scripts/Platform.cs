@@ -34,6 +34,9 @@ public class Platform : MonoBehaviour
     [SerializeField]
     private bool isRotating = false;
 
+    [SerializeField]
+    private Animator animator = null;
+
     [Header("TEMP Debug for Values")]
     public float breakTime = 0.0f;//TEMP Public for viewing
     public float dropTime = 0.0f;//TEMP Public for viewing
@@ -68,6 +71,8 @@ public class Platform : MonoBehaviour
             Vector3 rotationDirection = Vector3.forward * rotateSpeed * Time.deltaTime;
             transform.Rotate(rotationDirection);
         }
+
+        //TODO add a break timer based on animation state
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -117,12 +122,6 @@ public class Platform : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    /**PRIVATE FUNCTIONS**/
-    private void DestroyOnAnimate()
-    {
-        //TODO check if animating is done...if so then destroy game object
     }
 
 
