@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public Jumper jumper;
     public SpriteRenderer spriteRenderer;
     public AudioSource audioSource;
+    public Animator animator;
 
     private Vector2 initialPos = Vector2.zero;
 
@@ -19,11 +20,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame, around 60 times a second
     void Update()
     {
+        //for use with animator
+        //jumper.Velocity
+        //mover.Velocity
+        //jumper.IsOnGround
+
         //Listen for key presses and move left
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             mover.AccelerateInDirection(new Vector2(-1, 0));
             spriteRenderer.flipX = true;
+            animator.SetBool("Walking", true);
         }
 
         //Listen for key presses and move right
@@ -31,12 +38,20 @@ public class PlayerController : MonoBehaviour
         {
             mover.AccelerateInDirection(new Vector2(1, 0));
             spriteRenderer.flipX = false;
+            animator.SetBool("Walking", true);
+        }
+
+        if(Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A) ||
+            Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D))
+        {
+            animator.SetBool("Walking", false);
         }
 
         //Listen for key presses and jump
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
         {
             jumper.Jump();
+            animator.SetBool("IsOnGround", !jumper.IsOnGround());
 
             //Play a Jump Sound
             if (audioSource != null)

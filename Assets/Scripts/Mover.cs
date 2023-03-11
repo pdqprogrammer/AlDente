@@ -10,9 +10,12 @@ public class Mover : MonoBehaviour
     public float maximumSpeed = 15f;
 
     private Rigidbody2D myRigidbody2D;
+    private Vector2 velocity = Vector2.zero;
+
+    public Vector2 Velocity => velocity;
 
     // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
         myRigidbody2D = GetComponent<Rigidbody2D>();
     }
@@ -23,13 +26,13 @@ public class Mover : MonoBehaviour
         direction = Vector3.Normalize(direction);
 
         //Make our velocity faster depending on acceleration and frame rate
-        Vector2 newVelocity = myRigidbody2D.velocity +
+        velocity = myRigidbody2D.velocity +
             (direction * acceleration * Time.deltaTime);
 
         //Set maximum speeds in both directions
-        newVelocity.x = Mathf.Clamp(newVelocity.x, -maximumSpeed, maximumSpeed);
-        newVelocity.y = Mathf.Clamp(newVelocity.y, -maximumSpeed, maximumSpeed);
+        velocity.x = Mathf.Clamp(velocity.x, -maximumSpeed, maximumSpeed);
+        velocity.y = Mathf.Clamp(velocity.y, -maximumSpeed, maximumSpeed);
 
-        myRigidbody2D.velocity = newVelocity;
+        myRigidbody2D.velocity = velocity;
     }
 }

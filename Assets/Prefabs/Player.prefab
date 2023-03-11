@@ -175,6 +175,7 @@ MonoBehaviour:
   jumper: {fileID: 4353874201159308613}
   spriteRenderer: {fileID: 4353874201159308618}
   audioSource: {fileID: 0}
+  animator: {fileID: -8050873842600838050}
 --- !u!114 &4353874201159308610
 MonoBehaviour:
   m_ObjectHideFlags: 0
