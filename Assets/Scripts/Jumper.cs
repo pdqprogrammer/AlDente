@@ -26,9 +26,8 @@ public class Jumper : MonoBehaviour
     //In this script, the other scripts it needs are grabbed automatically. So we can make them private
     //Private variables are not visible in the inspector, but they still exist
     private Rigidbody2D myRigidBody2D;
-    private Vector2 velocity = Vector2.zero;
 
-    public Vector2 Velocity => velocity;
+    public Vector2 Velocity => myRigidBody2D.velocity;
 
     void Start()
     {
@@ -70,8 +69,6 @@ public class Jumper : MonoBehaviour
             {
                 myRigidBody2D.velocity = new Vector2(myRigidBody2D.velocity.x, jumpForceModified);
             }
-
-            velocity = myRigidBody2D.velocity;
         }
     }
 
