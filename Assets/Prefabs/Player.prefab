@@ -153,10 +153,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82db87848068c7d47a421443a55ee0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 6
+  jumpForce: 7
   groundCheckOffset: -0.5
   groundCheckDistance: 0.2
-  gravityScaleWhileJumpHeld: 0.5
+  gravityScaleWhileJumpHeld: 0.8
   jumpModifier: 1
 --- !u!114 &4353874201159308611
 MonoBehaviour:
