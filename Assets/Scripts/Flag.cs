@@ -13,6 +13,8 @@ public class Flag : MonoBehaviour
     {
         Debug.Log("Setting scene to " + nextScene);
 
+        GameManager.ChangeGameState(GameStates.WIN);
+        //TODO add in UI Manager to set state
         SceneManager.LoadSceneAsync("SampleScene", LoadSceneMode.Single);
         //SceneManager.LoadScene(nextScene);
     }

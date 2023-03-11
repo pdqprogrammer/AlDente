@@ -16,7 +16,7 @@ public class Coin : MonoBehaviour
         {
             GameManager.IncreaseScore(score);
             Debug.Log("Coin Collected!");
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }
