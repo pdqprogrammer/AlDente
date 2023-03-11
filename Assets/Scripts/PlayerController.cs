@@ -25,12 +25,15 @@ public class PlayerController : MonoBehaviour
         //mover.Velocity
         //jumper.IsOnGround
 
+        animator.SetFloat("YVelocity", jumper.Velocity.y);
+
         //Listen for key presses and move left
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             mover.AccelerateInDirection(new Vector2(-1, 0));
             spriteRenderer.flipX = true;
-            animator.SetBool("Walking", true);
+            //animator.SetBool("Walking", true);
+            
         }
 
         //Listen for key presses and move right
@@ -38,13 +41,13 @@ public class PlayerController : MonoBehaviour
         {
             mover.AccelerateInDirection(new Vector2(1, 0));
             spriteRenderer.flipX = false;
-            animator.SetBool("Walking", true);
+            //animator.SetBool("Walking", true);
         }
 
         if(Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A) ||
             Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D))
         {
-            animator.SetBool("Walking", false);
+            //animator.SetBool("Walking", false);
         }
 
         //Listen for key presses and jump
