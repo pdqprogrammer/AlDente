@@ -14,7 +14,7 @@ public class Platform : MonoBehaviour
     private float maxDropTimer = 1.0f;
 
     [SerializeField]
-    private float rotateSpeed = 1.0f;
+    private float rotateSpeed = 45.0f;
 
     [SerializeField]
     private float dropSpeed = 1.0f;
@@ -49,17 +49,6 @@ public class Platform : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (breakOnStand && breakTime <= maxBreakTimer)
-        {
-            breakTime += Time.deltaTime;
-            if(breakTime >= maxBreakTimer)
-            {
-                //TODO call break animation then destroy the object
-                isDestroyAnimating = true;
-                Destroy(gameObject);
-            }
-        }
-
         if (isDropping && dropTime <= maxDropTimer)
         {
             dropTime += Time.deltaTime;
@@ -76,7 +65,8 @@ public class Platform : MonoBehaviour
 
         if (isRotating)
         {
-            transform.rotation = Quaternion.Euler(Vector3.forward * rotateSpeed * Time.deltaTime);
+            Vector3 rotationDirection = Vector3.forward * rotateSpeed * Time.deltaTime;
+            transform.Rotate(rotationDirection);
         }
     }
 
@@ -99,6 +89,23 @@ public class Platform : MonoBehaviour
             if (canDrop)
             {
                 isDropping = true;
+            }
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Player"))
+        {
+            if (breakOnStand && breakTime <= maxBreakTimer)
+            {
+                breakTime += Time.deltaTime;
+                if (breakTime >= maxBreakTimer)
+                {
+                    //TODO call break animation then destroy the object
+                    isDestroyAnimating = true;
+                    Destroy(gameObject);
+                }
             }
         }
     }

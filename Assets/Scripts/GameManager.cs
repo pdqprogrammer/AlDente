@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         //Listen for key press and reset the scene
-        if (Input.GetKey(KeyCode.Alpha0) && gameState != GameStates.INGAME)
+        if (Input.GetKey(KeyCode.Alpha0) /*&& gameState != GameStates.INGAME*/)
         {
             SceneManager.LoadSceneAsync("SampleScene", LoadSceneMode.Single);
         }
