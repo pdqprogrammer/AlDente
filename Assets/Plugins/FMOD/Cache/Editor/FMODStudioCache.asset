@@ -1,0 +1,209 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7907720832545805983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3 - Ambience and Cutscene/1 - Bubbling
+  m_EditorClassIdentifier: 
+  Path: event:/3 - Ambience and Cutscene/1 - Bubbling
+  Guid:
+    Data1: 652482755
+    Data2: 1334270929
+    Data3: -1771636302
+    Data4: -1625619736
+  Banks:
+  - {fileID: 3002493493531797395}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4402733452541342321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/1 - SFX/Jump
+  m_EditorClassIdentifier: 
+  Path: event:/1 - SFX/Jump
+  Guid:
+    Data1: -1828977176
+    Data2: 1250965119
+    Data3: -1948578671
+    Data4: -914109055
+  Banks:
+  - {fileID: 3002493493531797395}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 305
+--- !u!114 &-2428595081131486904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/1 - SFX/Land
+  m_EditorClassIdentifier: 
+  Path: event:/1 - SFX/Land
+  Guid:
+    Data1: 426680896
+    Data2: 1142069219
+    Data3: -633933927
+    Data4: 2107249358
+  Banks:
+  - {fileID: 3002493493531797395}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 4670092759111433291}
+  - {fileID: 3002493493531797395}
+  EditorEvents:
+  - {fileID: 924512544199532569}
+  - {fileID: -2428595081131486904}
+  - {fileID: 2395598352979659464}
+  - {fileID: -7907720832545805983}
+  - {fileID: -4402733452541342321}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 3002493493531797395}
+  StringsBanks:
+  - {fileID: 4670092759111433291}
+  cacheTime: 638141463515504382
+  cacheVersion: 131601
+--- !u!114 &924512544199532569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/2 - Music/1 - Main Loop
+  m_EditorClassIdentifier: 
+  Path: event:/2 - Music/1 - Main Loop
+  Guid:
+    Data1: -648701672
+    Data2: 1199975429
+    Data3: -1710264908
+    Data4: 772625222
+  Banks:
+  - {fileID: 3002493493531797395}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 34899
+--- !u!114 &2395598352979659464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/1 - SFX/Walk
+  m_EditorClassIdentifier: 
+  Path: event:/1 - SFX/Walk
+  Guid:
+    Data1: 1446565443
+    Data2: 1219895562
+    Data3: -922946903
+    Data4: -1510259160
+  Banks:
+  - {fileID: 3002493493531797395}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3002493493531797395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Build/Desktop/Master.bank
+  m_EditorClassIdentifier: 
+  Path: F:/2 - A103 - Marching Band , Steel Band, and Audio Video Recordings/3 -
+    A103 Media Productions/3 - Video Games/2023 - Team Swashbucklers/Al Dente/Al
+    Dente FMOD/Build/Desktop/Master.bank
+  Name: Build/Desktop/Master
+  StudioPath: bank:/Master
+  lastModified: 638141463515255064
+  FileSizes:
+  - Name: 
+    Value: 356832
+  Exists: 1
+--- !u!114 &4670092759111433291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Build/Desktop/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: F:/2 - A103 - Marching Band , Steel Band, and Audio Video Recordings/3 -
+    A103 Media Productions/3 - Video Games/2023 - Team Swashbucklers/Al Dente/Al
+    Dente FMOD/Build/Desktop/Master.strings.bank
+  Name: Build/Desktop/Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638141463515504382
+  FileSizes:
+  - Name: 
+    Value: 1228
+  Exists: 1
