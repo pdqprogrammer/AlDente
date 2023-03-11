@@ -11,11 +11,15 @@ public class Flag : MonoBehaviour
     //Very simple script just listens to see if something touches it and shows a screen
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Setting scene to " + nextScene);
+        //If it does touch something, print a message, update score, and destroy object
+        if (collision.gameObject.tag.Equals("Player"))
+        {
+            Debug.Log("Setting scene to " + nextScene);
 
-        GameManager.ChangeGameState(GameStates.WIN);
-        //TODO add in UI Manager to set state
-        SceneManager.LoadSceneAsync("SampleScene", LoadSceneMode.Single);
-        //SceneManager.LoadScene(nextScene);
+            GameManager.ChangeGameState(GameStates.WIN);
+            //TODO add in UI Manager to set state
+            GameManager.ResetGame();
+            //SceneManager.LoadScene(nextScene);
+        }
     }
 }

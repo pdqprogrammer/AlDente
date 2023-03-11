@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         //Listen for key press and reset the scene
         if (Input.GetKey(KeyCode.Alpha0) /*&& gameState != GameStates.INGAME*/)
         {
-            SceneManager.LoadSceneAsync("SampleScene", LoadSceneMode.Single);
+            ResetGame();
         }
     }
 
@@ -57,6 +57,12 @@ public class GameManager : MonoBehaviour
     public static void ResetScore()
     {
         _Instance.score = 0;
+    }
+
+    //function to reset game
+    public static void ResetGame()
+    {
+        SceneManager.LoadSceneAsync("SampleScene", LoadSceneMode.Single);
     }
 
     //TODO create reset function that will revert everything back to its original state

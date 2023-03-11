@@ -127,7 +127,8 @@ MonoBehaviour:
   platformState: 0
   maxBreakTimer: 1
   maxDropTimer: 1
-  rotateSpeed: 1
+  rotateSpeed: 45
+  dropSpeed: 1
   canHeat: 0
   destroyOnJump: 0
   breakOnStand: 0
@@ -136,3 +137,4 @@ MonoBehaviour:
   breakTime: 0
   dropTime: 0
   isDropping: 0
+  isDestroyAnimating: 0
