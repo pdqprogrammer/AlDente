@@ -60,4 +60,4 @@ crashlytics-build.properties
 
 *.dwlt
 *FMODStudioCache.asset
-*fmod_editor.log
+fmod_editor.log
