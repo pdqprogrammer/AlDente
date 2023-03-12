@@ -37,6 +37,8 @@ public class Platform : MonoBehaviour
     [SerializeField]
     private Animator animator = null;
 
+    [Header("Platform Colors")]
+
     [Header("TEMP Debug for Values")]
     public float breakTime = 0.0f;//TEMP Public for viewing
     public float dropTime = 0.0f;//TEMP Public for viewing
