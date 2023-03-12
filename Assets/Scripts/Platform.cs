@@ -38,6 +38,20 @@ public class Platform : MonoBehaviour
     private Animator animator = null;
 
     [Header("Platform Colors")]
+    [SerializeField]
+    private Color firmColor = Color.white;
+
+    [SerializeField]
+    private Color softColor = Color.white;
+
+    [SerializeField]
+    private Color fragileColor = Color.white;
+
+    [SerializeField]
+    private Color wallColor = Color.white;
+
+    [SerializeField]
+    private SpriteRenderer platformSpriteRenderer = null;
 
     [Header("TEMP Debug for Values")]
     public float breakTime = 0.0f;//TEMP Public for viewing
@@ -48,7 +62,7 @@ public class Platform : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        
+        SetSpriteColor();
     }
 
     // Update is called once per frame
@@ -132,6 +146,30 @@ public class Platform : MonoBehaviour
         }
     }
 
+    private void SetSpriteColor()
+    {
+        if(platformSpriteRenderer == null)
+        {
+            Debug.Log("Please set sprite renderer.");
+            return;
+        }
+
+        switch (platformState)
+        {
+            case PlatformState.FIRM:
+                platformSpriteRenderer.color = firmColor;
+                break;
+            case PlatformState.SOFT:
+                platformSpriteRenderer.color = softColor;
+                break;
+            case PlatformState.FRAGILE:
+                platformSpriteRenderer.color = fragileColor;
+                break;
+            default:
+                platformSpriteRenderer.color = wallColor;
+                break;
+        }
+    }
 
     /**PUBLIC FUNCTIONS**/
     public bool IsHighJump()
@@ -159,6 +197,8 @@ public class Platform : MonoBehaviour
             {
                 platformState = PlatformState.FRAGILE;
             }
+
+            SetSpriteColor();
         }
     }
 
