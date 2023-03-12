@@ -58,10 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-UserSettings/Layouts/default-2021.dwlt
-UserSettings/Layouts/default-2021.dwlt
 *.dwlt
-*.dwlt
-Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
-fmod_editor.log
-fmod_editor.log
+*FMODStudioCache.asset
+*fmod_editor.log
