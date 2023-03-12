@@ -213,7 +213,12 @@ MonoBehaviour:
   canDrop: 1
   isRotating: 0
   animator: {fileID: 3064043488899731335}
+  firmColor: {r: 1, g: 1, b: 1, a: 1}
+  softColor: {r: 1, g: 1, b: 1, a: 1}
+  fragileColor: {r: 1, g: 1, b: 1, a: 1}
+  wallColor: {r: 1, g: 1, b: 1, a: 1}
+  platformSpriteRenderer: {fileID: 0}
   breakTime: 0
-  dropTime: 1
+  dropTime: 0
   isDropping: 1
   isDestroyAnimating: 0
