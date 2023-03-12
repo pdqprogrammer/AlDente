@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 5186489311096943734}
   - component: {fileID: 5186489311096943735}
   - component: {fileID: 5186489311096943728}
+  - component: {fileID: -3940549514937048147}
   m_Layer: 0
-  m_Name: spiral
+  m_Name: Fusilli
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,3 +181,30 @@ PolygonCollider2D:
       - {x: -0.82731575, y: -0.29193506}
       - {x: -0.7276904, y: -0.39077392}
       - {x: -0.6957678, y: -0.39654174}
+--- !u!114 &-3940549514937048147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5186489311096943729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4436c1712a289418aab16c48f76d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformState: 0
+  maxBreakTimer: 1
+  maxDropTimer: 1
+  rotateSpeed: 45
+  dropSpeed: 1
+  canHeat: 0
+  destroyOnJump: 0
+  breakOnStand: 1
+  canDrop: 0
+  isRotating: 0
+  animator: {fileID: 0}
+  breakTime: 0
+  dropTime: 0
+  isDropping: 0
+  isDestroyAnimating: 0

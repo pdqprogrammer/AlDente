@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 8943213168666167835}
   - component: {fileID: 8943213168666167834}
   - component: {fileID: 8943213168666167833}
+  - component: {fileID: 4713224238308711899}
+  - component: {fileID: -5310293731955319701}
   m_Layer: 0
-  m_Name: spinny
+  m_Name: Penne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,3 +140,51 @@ PolygonCollider2D:
       - {x: 0.8199818, y: -0.32144108}
       - {x: 0.97500837, y: -0.28893661}
       - {x: 1.0574422, y: -0.121476606}
+--- !u!114 &4713224238308711899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8943213168666167832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4436c1712a289418aab16c48f76d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformState: 0
+  maxBreakTimer: 1
+  maxDropTimer: 1
+  rotateSpeed: 45
+  dropSpeed: 1
+  canHeat: 1
+  destroyOnJump: 1
+  breakOnStand: 0
+  canDrop: 0
+  isRotating: 0
+  animator: {fileID: -5310293731955319701}
+  breakTime: 10
+  dropTime: 0
+  isDropping: 0
+  isDestroyAnimating: 0
+--- !u!95 &-5310293731955319701
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8943213168666167832}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 278ab1b899d383946b24d76c206af15a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

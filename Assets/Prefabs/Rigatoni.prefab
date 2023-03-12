@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 5633748249242429449}
   - component: {fileID: 5633748249242429448}
   - component: {fileID: 5633748249242429455}
+  - component: {fileID: -3243478989696973029}
+  - component: {fileID: 8625923268402445606}
   m_Layer: 0
-  m_Name: flatplatform
+  m_Name: Rigatoni
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,3 +144,51 @@ PolygonCollider2D:
       - {x: 0.68770796, y: -0.37749237}
       - {x: 0.83770794, y: -0.35749236}
       - {x: 1.087708, y: -0.29749236}
+--- !u!114 &-3243478989696973029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5633748249242429454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4436c1712a289418aab16c48f76d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformState: 0
+  maxBreakTimer: 1
+  maxDropTimer: 1
+  rotateSpeed: 45
+  dropSpeed: 1
+  canHeat: 1
+  destroyOnJump: 0
+  breakOnStand: 0
+  canDrop: 0
+  isRotating: 0
+  animator: {fileID: 8625923268402445606}
+  breakTime: 0
+  dropTime: 0
+  isDropping: 0
+  isDestroyAnimating: 0
+--- !u!95 &8625923268402445606
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5633748249242429454}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c4c34b69b0e0d349a3e7ff4f7ccabeb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

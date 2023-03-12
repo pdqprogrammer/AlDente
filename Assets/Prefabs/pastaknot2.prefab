@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2092889558353242849}
   - component: {fileID: 2092889558353242854}
   - component: {fileID: -5756873072925391298}
+  - component: {fileID: -1446593133812757061}
   m_Layer: 0
   m_Name: pastaknot2
   m_TagString: Untagged
@@ -383,3 +384,30 @@ PolygonCollider2D:
       - {x: -0.32, y: 0.88}
       - {x: -0.35999998, y: 0.84}
       - {x: -0.35, y: 0.83}
+--- !u!114 &-1446593133812757061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092889558353242852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4436c1712a289418aab16c48f76d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformState: 0
+  maxBreakTimer: 1
+  maxDropTimer: 1
+  rotateSpeed: 45
+  dropSpeed: 1
+  canHeat: 0
+  destroyOnJump: 0
+  breakOnStand: 0
+  canDrop: 1
+  isRotating: 1
+  animator: {fileID: 0}
+  breakTime: 0
+  dropTime: 10
+  isDropping: 0
+  isDestroyAnimating: 0
