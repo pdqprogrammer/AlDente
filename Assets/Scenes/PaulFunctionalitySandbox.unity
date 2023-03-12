@@ -898,6 +898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uIHandler: {fileID: 213593292}
+  gameState: 2
 --- !u!4 &694230313
 Transform:
   m_ObjectHideFlags: 0

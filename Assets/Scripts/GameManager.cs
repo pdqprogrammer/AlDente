@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _Instance;
 
     [SerializeField]
-    private UIHandler uIHandler;
+    private UIHandler uIHandler = null;
 
     [SerializeField]
     private GameStates gameState = GameStates.INGAME;
@@ -26,9 +26,21 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         //Listen for key press and reset the scene
-        if (Input.GetKey(KeyCode.Alpha0) /*&& gameState != GameStates.INGAME*/)
+        if (Input.GetKeyUp(KeyCode.Alpha0) /*&& gameState != GameStates.INGAME*/)
         {
             ResetGame();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Escape) && gameState == GameStates.INGAME)
+        {
+            ChangeGameState(GameStates.PAUSE);
+            return;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Escape) && gameState == GameStates.PAUSE)
+        {
+            ChangeGameState(GameStates.INGAME);
+            return;
         }
     }
 
@@ -38,14 +50,14 @@ public class GameManager : MonoBehaviour
     public static void ChangeGameState(GameStates state)
     {
         _Instance.gameState = state;
-        _Instance.uIHandler.SetUI(state);
+        _Instance.uIHandler?.SetUI(state);
     }
 
     //function to increase game score
     public static void IncreaseScore(int increase)
     {
         _Instance.score += increase;
-        _Instance.uIHandler.UpdateScore(_Instance.score);
+        _Instance.uIHandler?.UpdateScore(_Instance.score);
     }
 
     //function to reset game score

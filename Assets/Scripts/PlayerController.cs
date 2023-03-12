@@ -10,20 +10,37 @@ public class PlayerController : MonoBehaviour
     public AudioSource audioSource;
     public Animator animator;
 
-    private Vector2 initialPos = Vector2.zero;
-
-    private void Awake()
-    {
-        initialPos = transform.position;
-    }
+    private bool setPaused = false;
 
     // Update is called once per frame, around 60 times a second
-    void Update()
+    private void Update()
     {
-        //for use with animator
-        //jumper.Velocity
-        //mover.Velocity
-        //jumper.IsOnGround
+        if (GameManager.CurrentGameState != GameStates.INGAME)
+        {
+            if (!setPaused)
+            {
+                if (GameManager.CurrentGameState == GameStates.MENU)
+                {
+                    animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+                }
+                else
+                {
+                    animator.updateMode = AnimatorUpdateMode.Normal;
+                }
+
+                setPaused = true;
+                Time.timeScale = 0;
+            }
+
+            return;
+        }
+
+        if (setPaused)
+        {
+            setPaused = false;
+            Time.timeScale = 1;
+        }
+
         animator.SetFloat("YVelocity", jumper.Velocity.y);
         animator.SetBool("IsOnGround", jumper.IsOnGround());
 
@@ -71,10 +88,5 @@ public class PlayerController : MonoBehaviour
         {
             jumper.SetGravityReduced(false);
         }
-    }
-
-    public void ResetPos()
-    {
-        transform.position = initialPos;
     }
 }
