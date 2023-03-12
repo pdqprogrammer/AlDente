@@ -15,9 +15,16 @@ public class Heat : MonoBehaviour
     {
         if (GameManager.CurrentGameState == GameStates.INGAME)
         {
-            Vector3 direction = new Vector3(0, Time.deltaTime * heatSpeed, 0);
-            Vector3 updatedPosition = transform.position + direction;
-            transform.position = updatedPosition;
+            if (timeUntilStart < 0)
+            {
+                Vector3 direction = new Vector3(0, Time.deltaTime * heatSpeed, 0);
+                Vector3 updatedPosition = transform.position + direction;
+                transform.position = updatedPosition;
+            }
+            else
+            {
+                timeUntilStart -= Time.deltaTime;
+            }
         }
     }
 }
