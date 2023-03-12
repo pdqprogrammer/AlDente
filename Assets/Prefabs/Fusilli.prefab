@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformState: 0
-  maxBreakTimer: 1
+  maxBreakTimer: 5
   maxDropTimer: 1
   rotateSpeed: 45
   dropSpeed: 1
@@ -204,6 +204,11 @@ MonoBehaviour:
   canDrop: 0
   isRotating: 0
   animator: {fileID: 0}
+  firmColor: {r: 1, g: 1, b: 1, a: 1}
+  softColor: {r: 1, g: 1, b: 1, a: 1}
+  fragileColor: {r: 1, g: 1, b: 1, a: 1}
+  wallColor: {r: 1, g: 1, b: 1, a: 1}
+  platformSpriteRenderer: {fileID: 0}
   breakTime: 0
   dropTime: 0
   isDropping: 0

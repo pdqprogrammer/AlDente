@@ -202,11 +202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4436c1712a289418aab16c48f76d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformState: 0
-  maxBreakTimer: 1
-  maxDropTimer: 1
+  platformState: 2
+  maxBreakTimer: 6
+  maxDropTimer: 4
   rotateSpeed: 45
-  dropSpeed: 0.5
+  dropSpeed: 1
   canHeat: 1
   destroyOnJump: 0
   breakOnStand: 0
@@ -220,5 +220,5 @@ MonoBehaviour:
   platformSpriteRenderer: {fileID: 0}
   breakTime: 0
   dropTime: 0
-  isDropping: 1
+  isDropping: 0
   isDestroyAnimating: 0
