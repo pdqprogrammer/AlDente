@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class Collectible : MonoBehaviour
 {
     //score that will be added when the item is collected
     [SerializeField]

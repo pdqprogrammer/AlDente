@@ -7,6 +7,9 @@ public class Heat : MonoBehaviour
     [SerializeField]
     private float heatSpeed = 1.0f;
 
+    [SerializeField]
+    private float timeUntilStart = 1.0f;
+
     // Update is called once per frame
     private void Update()
     {

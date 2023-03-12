@@ -17,9 +17,6 @@ public class Flag : MonoBehaviour
             Debug.Log("Setting scene to " + nextScene);
 
             GameManager.ChangeGameState(GameStates.WIN);
-            //TODO add in UI Manager to set state
-            GameManager.ResetGame();
-            //SceneManager.LoadScene(nextScene);
         }
     }
 }

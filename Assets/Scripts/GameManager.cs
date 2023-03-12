@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameStates gameState = GameStates.INGAME;
+
+    [SerializeField]
+    private string sceneName;
     private int score = 0;
 
     public static GameStates CurrentGameState => _Instance.gameState;
@@ -71,8 +74,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("SampleScene", LoadSceneMode.Single);
     }
-
-    //TODO create reset function that will revert everything back to its original state
 
     ///SETUP SINGLETON SAFELY///
     private static GameManager Instance
