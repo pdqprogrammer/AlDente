@@ -398,9 +398,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformState: 0
   maxBreakTimer: 1
-  maxDropTimer: 1
+  maxDropTimer: 8
   rotateSpeed: 45
-  dropSpeed: 1
+  dropSpeed: 2
   canHeat: 0
   destroyOnJump: 0
   breakOnStand: 0

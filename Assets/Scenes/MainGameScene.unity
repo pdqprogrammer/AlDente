@@ -394,8 +394,12 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -1446593133812757061, guid: 229d881e729641e4bac9aecc8c0e898f, type: 3}
+      propertyPath: dropSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1446593133812757061, guid: 229d881e729641e4bac9aecc8c0e898f, type: 3}
       propertyPath: maxDropTimer
-      value: 0.6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2092889558353242849, guid: 229d881e729641e4bac9aecc8c0e898f, type: 3}
       propertyPath: m_RootOrder
