@@ -12,6 +12,7 @@ public class PlayerAudioController : MonoBehaviour
     public FMODUnity.EventReference collect3Sound;
 
     public FMOD.Studio.EventInstance walkInstance;
+    public FMOD.Studio.EventInstance landInstance;
 
     private int currJumpSound = 0;
 
@@ -32,7 +33,14 @@ public class PlayerAudioController : MonoBehaviour
                 }
                 break;
             case SoundStates.LAND:
-                FMODUnity.RuntimeManager.PlayOneShot(landSound);
+                landInstance.getPlaybackState(out FMOD.Studio.PLAYBACK_STATE landPlayBackState);
+
+                if (landPlayBackState == FMOD.Studio.PLAYBACK_STATE.STOPPED)
+                {
+                    landInstance = FMODUnity.RuntimeManager.CreateInstance(landSound);
+                    landInstance.start();
+                    landInstance.release();
+                }
                 break;
             case SoundStates.COLLECT:
                 if(currJumpSound == 0)

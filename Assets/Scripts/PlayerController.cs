@@ -88,6 +88,7 @@ public class PlayerController : MonoBehaviour
 
             //Play a Jump Sound
             playerAudioController.PlayAudio(SoundStates.JUMP);
+            playerAudioController.StopWalkAudio();
         }
 
         //TODO see what this does
