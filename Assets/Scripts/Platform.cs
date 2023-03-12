@@ -91,6 +91,8 @@ public class Platform : MonoBehaviour
             }
 
             //TODO add a break timer based on animation state
+            //TODO animation for platform code
+            //TODO check animation is playing and if is broken
         }
     }
 

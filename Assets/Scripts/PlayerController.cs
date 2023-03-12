@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A) ||
             Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D))
         {
+            mover.StopAcceleration();
             animator.SetBool("Walking", false);
         }
 
