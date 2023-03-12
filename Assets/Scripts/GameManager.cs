@@ -7,13 +7,20 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager _Instance;
 
+    [SerializeField]
+    private UIHandler uIHandler;
+
+    [SerializeField]
     private GameStates gameState = GameStates.INGAME;
     private int score = 0;
+
+    public static GameStates CurrentGameState => _Instance.gameState;
 
     /**UNITY FUNCTIONS**/
     private void Awake()
     {
         Instance = this;
+        ChangeGameState(GameStates.INGAME);
     }
 
     private void Update()
@@ -31,26 +38,14 @@ public class GameManager : MonoBehaviour
     public static void ChangeGameState(GameStates state)
     {
         _Instance.gameState = state;
-
-        switch (state)
-        {
-            case GameStates.INGAME:
-                break;
-            case GameStates.MENU:
-                break;
-            case GameStates.GAMEOVER:
-                break;
-            case GameStates.WIN:
-                break;
-            default:
-                break;
-        }
+        _Instance.uIHandler.SetUI(state);
     }
 
     //function to increase game score
     public static void IncreaseScore(int increase)
     {
         _Instance.score += increase;
+        _Instance.uIHandler.UpdateScore(_Instance.score);
     }
 
     //function to reset game score

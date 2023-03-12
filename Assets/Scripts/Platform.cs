@@ -52,27 +52,30 @@ public class Platform : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (isDropping && dropTime <= maxDropTimer)
+        if (GameManager.CurrentGameState == GameStates.INGAME)
         {
-            dropTime += Time.deltaTime;
-
-            Vector3 direction = new Vector3(0, Time.deltaTime * -dropSpeed, 0);
-            Vector3 updatedPosition = transform.position + direction;
-            transform.position = updatedPosition;
-
-            if (dropTime >= maxDropTimer)
+            if (isDropping && dropTime <= maxDropTimer)
             {
-                Destroy(gameObject);
+                dropTime += Time.deltaTime;
+
+                Vector3 direction = new Vector3(0, Time.deltaTime * -dropSpeed, 0);
+                Vector3 updatedPosition = transform.position + direction;
+                transform.position = updatedPosition;
+
+                if (dropTime >= maxDropTimer)
+                {
+                    Destroy(gameObject);
+                }
             }
-        }
 
-        if (isRotating)
-        {
-            Vector3 rotationDirection = Vector3.forward * rotateSpeed * Time.deltaTime;
-            transform.Rotate(rotationDirection);
-        }
+            if (isRotating)
+            {
+                Vector3 rotationDirection = Vector3.forward * rotateSpeed * Time.deltaTime;
+                transform.Rotate(rotationDirection);
+            }
 
-        //TODO add a break timer based on animation state
+            //TODO add a break timer based on animation state
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -100,16 +103,19 @@ public class Platform : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag.Equals("Player"))
+        if (GameManager.CurrentGameState == GameStates.INGAME)
         {
-            if (breakOnStand && breakTime <= maxBreakTimer)
+            if (collision.gameObject.tag.Equals("Player"))
             {
-                breakTime += Time.deltaTime;
-                if (breakTime >= maxBreakTimer)
+                if (breakOnStand && breakTime <= maxBreakTimer)
                 {
-                    //TODO call break animation then destroy the object
-                    isDestroyAnimating = true;
-                    Destroy(gameObject);
+                    breakTime += Time.deltaTime;
+                    if (breakTime >= maxBreakTimer)
+                    {
+                        //TODO call break animation then destroy the object
+                        isDestroyAnimating = true;
+                        Destroy(gameObject);
+                    }
                 }
             }
         }

@@ -123,6 +123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeatHazard_TooClose
       objectReference: {fileID: 0}
+    - target: {fileID: 6695153068064462022, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
+      propertyPath: m_TagString
+      value: Heat
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
 --- !u!4 &4893068641423793575 stripped
@@ -208,6 +212,10 @@ PrefabInstance:
     - target: {fileID: 6695153068064462022, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
       propertyPath: m_Name
       value: HeatHazard_Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695153068064462022, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
+      propertyPath: m_TagString
+      value: Heat
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
