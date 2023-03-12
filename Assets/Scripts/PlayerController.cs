@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
     public Mover mover;
     public Jumper jumper;
     public SpriteRenderer spriteRenderer;
-    public AudioSource audioSource;
     public Animator animator;
+    public PlayerAudioController playerAudioController;
 
     private bool setPaused = false;
 
@@ -50,7 +50,8 @@ public class PlayerController : MonoBehaviour
             mover.AccelerateInDirection(new Vector2(-1, 0));
             spriteRenderer.flipX = true;
             animator.SetBool("Walking", true);
-            
+            playerAudioController.PlayAudio(SoundStates.WALK);
+
         }
 
         //Listen for key presses and move right
@@ -59,6 +60,7 @@ public class PlayerController : MonoBehaviour
             mover.AccelerateInDirection(new Vector2(1, 0));
             spriteRenderer.flipX = false;
             animator.SetBool("Walking", true);
+            playerAudioController.PlayAudio(SoundStates.WALK);
         }
 
         if(Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A) ||
@@ -74,10 +76,7 @@ public class PlayerController : MonoBehaviour
             jumper.Jump();
 
             //Play a Jump Sound
-            if (audioSource != null)
-            {
-                audioSource.Play();
-            }
+            playerAudioController.PlayAudio(SoundStates.JUMP);
         }
 
         //TODO see what this does
