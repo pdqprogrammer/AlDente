@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
     //function to reset game
     public static void ResetGame()
     {
-        SceneManager.LoadSceneAsync("SampleScene", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync(_Instance.sceneName, LoadSceneMode.Single);
     }
 
     ///SETUP SINGLETON SAFELY///
