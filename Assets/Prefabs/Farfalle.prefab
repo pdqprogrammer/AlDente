@@ -206,7 +206,7 @@ MonoBehaviour:
   maxBreakTimer: 1
   maxDropTimer: 1
   rotateSpeed: 45
-  dropSpeed: 1
+  dropSpeed: 0.5
   canHeat: 1
   destroyOnJump: 0
   breakOnStand: 0
@@ -214,6 +214,6 @@ MonoBehaviour:
   isRotating: 0
   animator: {fileID: 3064043488899731335}
   breakTime: 0
-  dropTime: 15
-  isDropping: 0
+  dropTime: 1
+  isDropping: 1
   isDestroyAnimating: 0

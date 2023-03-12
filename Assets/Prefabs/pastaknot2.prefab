@@ -408,6 +408,6 @@ MonoBehaviour:
   isRotating: 1
   animator: {fileID: 0}
   breakTime: 0
-  dropTime: 10
+  dropTime: 2
   isDropping: 0
   isDestroyAnimating: 0
