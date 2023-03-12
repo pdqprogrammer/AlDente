@@ -11,6 +11,8 @@ public class PlayerAudioController : MonoBehaviour
     public FMODUnity.EventReference collect2Sound;
     public FMODUnity.EventReference collect3Sound;
 
+    public FMOD.Studio.EventInstance walkInstance;
+
     private int currJumpSound = 0;
 
     public void PlayAudio(SoundStates soundState)
@@ -21,7 +23,13 @@ public class PlayerAudioController : MonoBehaviour
                 FMODUnity.RuntimeManager.PlayOneShot(jumpSound);
                 break;
             case SoundStates.WALK:
-                FMODUnity.RuntimeManager.PlayOneShot(walkSound);
+                walkInstance.getPlaybackState(out FMOD.Studio.PLAYBACK_STATE playBackState);
+
+                if (playBackState == FMOD.Studio.PLAYBACK_STATE.STOPPED)
+                {
+                    walkInstance = FMODUnity.RuntimeManager.CreateInstance(walkSound);
+                    walkInstance.start();
+                }
                 break;
             case SoundStates.LAND:
                 FMODUnity.RuntimeManager.PlayOneShot(landSound);
@@ -48,6 +56,19 @@ public class PlayerAudioController : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    //function used to stop walking animation
+    public void StopWalkAudio()
+    {
+        walkInstance.getPlaybackState(out FMOD.Studio.PLAYBACK_STATE playBackState);
+
+        if (playBackState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+        {
+            walkInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        }
+
+        walkInstance.release();
     }
 }
 

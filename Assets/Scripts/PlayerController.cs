@@ -77,6 +77,7 @@ public class PlayerController : MonoBehaviour
             Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D))
         {
             mover.StopAcceleration();
+            playerAudioController.StopWalkAudio();
             animator.SetBool("Walking", false);
         }
 
