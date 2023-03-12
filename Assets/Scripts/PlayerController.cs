@@ -44,14 +44,21 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("YVelocity", jumper.Velocity.y);
         animator.SetBool("IsOnGround", jumper.IsOnGround());
 
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Landing"))
+        {
+            playerAudioController.PlayAudio(SoundStates.LAND);
+        }
+
         //Listen for key presses and move left
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             mover.AccelerateInDirection(new Vector2(-1, 0));
             spriteRenderer.flipX = true;
             animator.SetBool("Walking", true);
-            playerAudioController.PlayAudio(SoundStates.WALK);
-
+            if (jumper.IsOnGround())
+            {
+                playerAudioController.PlayAudio(SoundStates.WALK);
+            }
         }
 
         //Listen for key presses and move right
@@ -60,7 +67,10 @@ public class PlayerController : MonoBehaviour
             mover.AccelerateInDirection(new Vector2(1, 0));
             spriteRenderer.flipX = false;
             animator.SetBool("Walking", true);
-            playerAudioController.PlayAudio(SoundStates.WALK);
+            if (jumper.IsOnGround())
+            {
+                playerAudioController.PlayAudio(SoundStates.WALK);
+            }
         }
 
         if(Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A) ||
