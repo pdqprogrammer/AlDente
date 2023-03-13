@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4353874201159308612}
   - component: {fileID: 4353874201159308613}
   - component: {fileID: 4353874201159308611}
+  - component: {fileID: 3271981947384980067}
   - component: {fileID: 4353874201159308610}
   - component: {fileID: -8050873842600838050}
   m_Layer: 0
@@ -125,9 +126,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.414839}
+  m_Offset: {x: -0.025749207, y: 0.414839}
   serializedVersion: 2
-  m_Radius: 4.1851606
+  m_Radius: 2.717432
 --- !u!114 &4353874201159308612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +177,61 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4353874201159308618}
   audioSource: {fileID: 0}
   animator: {fileID: -8050873842600838050}
+  playerAudioController: {fileID: 3271981947384980067}
+--- !u!114 &3271981947384980067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4353874201159308619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac058ae43ba4a2149bb807fcf0016c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  walkSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  landSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  collect1Sound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  collect2Sound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  collect3Sound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &4353874201159308610
 MonoBehaviour:
   m_ObjectHideFlags: 0

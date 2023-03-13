@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 216642013923661237}
   - component: {fileID: 216642013923661130}
   - component: {fileID: 216642013923661236}
-  - component: {fileID: 2977593371709652076}
-  - component: {fileID: 8866926808763521096}
+  - component: {fileID: -6819897919953352958}
+  - component: {fileID: 5894037515382426946}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followedTransform: {fileID: 0}
---- !u!114 &2977593371709652076
+--- !u!114 &-6819897919953352958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
---- !u!114 &8866926808763521096
+--- !u!114 &5894037515382426946
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -1,5 +1,74 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5352201443808613978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1074288088669073828}
+  - component: {fileID: 1921697073443575114}
+  m_Layer: 0
+  m_Name: Wrapper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1074288088669073828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5352201443808613978}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8943213168666167835}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1921697073443575114
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5352201443808613978}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.08029056, y: 0.18817025}
+      - {x: -0.97725457, y: 0.31945494}
+      - {x: -1.026411, y: 0.26600054}
+      - {x: -1.2894356, y: -0.08531327}
+      - {x: -1.3024558, y: -0.46283332}
+      - {x: -0.79297286, y: -0.39864174}
+      - {x: -0.09022617, y: -0.4521687}
+      - {x: 0.8776824, y: -0.43925765}
+      - {x: 0.96167105, y: -0.3903942}
+      - {x: 1.0710822, y: -0.24722101}
+      - {x: 1.2361524, y: 0.332385}
+      - {x: 1.2186923, y: 0.47852018}
 --- !u!1 &8943213168666167832
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,7 +100,8 @@ Transform:
   m_LocalPosition: {x: 3.1207, y: 1.6131, z: 0}
   m_LocalScale: {x: 0.7717, y: 0.7717, z: 0.7717}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1074288088669073828}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -125,7 +195,7 @@ PolygonCollider2D:
       - {x: -0.44497374, y: 0.33092108}
       - {x: -0.72248703, y: 0.3334433}
       - {x: -0.8874602, y: 0.32843438}
-      - {x: -0.9400003, y: 0.32847014}
+      - {x: -0.9819452, y: 0.32847014}
       - {x: -0.9949559, y: 0.26095673}
       - {x: -1.1399469, y: 0.023496704}
       - {x: -1.1824336, y: -0.10151223}
@@ -153,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformState: 0
-  maxBreakTimer: 0.2
+  maxBreakTimer: 4
   maxDropTimer: 1
   rotateSpeed: 45
   dropSpeed: 1
@@ -163,7 +233,12 @@ MonoBehaviour:
   canDrop: 0
   isRotating: 0
   animator: {fileID: -5310293731955319701}
-  breakTime: 10
+  firmColor: {r: 1, g: 1, b: 1, a: 1}
+  softColor: {r: 1, g: 1, b: 1, a: 1}
+  fragileColor: {r: 1, g: 1, b: 1, a: 1}
+  wallColor: {r: 1, g: 1, b: 1, a: 1}
+  platformSpriteRenderer: {fileID: 0}
+  breakTime: 0
   dropTime: 0
   isDropping: 0
   isDestroyAnimating: 0

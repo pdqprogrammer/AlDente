@@ -35,4 +35,12 @@ public class Mover : MonoBehaviour
 
         myRigidbody2D.velocity = velocity;
     }
+
+    public void StopAcceleration()
+    {
+        //Stop moving right and left
+        velocity.x = 0;
+
+        myRigidbody2D.velocity = velocity;
+    }
 }
