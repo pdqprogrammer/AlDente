@@ -56,7 +56,9 @@ public class Platform : MonoBehaviour
     [Header("TEMP Debug for Values")]
     public float breakTime = 0.0f;//TEMP Public for viewing
     public float dropTime = 0.0f;//TEMP Public for viewing
+    public float destroyTime = 0.0f;//TEMP Public for viewing
     public bool isDropping = false;//TEMP Public for viewing
+    public bool canDestroy = false;//TEMP Public for viewing
 
     // Start is called before the first frame update
     private void Start()
@@ -81,6 +83,11 @@ public class Platform : MonoBehaviour
                 {
                     Destroy(gameObject);
                 }
+            }
+
+            if (canDestroy && destroyTime < maxBreakTimer)
+            {
+                destroyTime += Time.deltaTime;
             }
 
             if (isRotating)
@@ -126,6 +133,11 @@ public class Platform : MonoBehaviour
             {
                 isDropping = true;
             }
+
+            if (destroyOnJump)
+            {
+                canDestroy = true;
+            }
         }
     }
 
@@ -153,7 +165,7 @@ public class Platform : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         //check if player is jumping
-        if (collision.gameObject.tag.Equals("Player") && destroyOnJump)
+        if (collision.gameObject.tag.Equals("Player") && destroyTime >= maxBreakTimer)
         {
             Destroy(gameObject);
         }
