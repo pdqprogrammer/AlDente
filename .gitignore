@@ -61,3 +61,8 @@ crashlytics-build.properties
 *.dwlt
 *FMODStudioCache.asset
 fmod_editor.log
+Assets/Prefabs/New Scene.unity.meta
+Assets/Prefabs/New Scene.unity
+UserSettings/EditorUserSettings.asset
+UserSettings/Search.index
+UserSettings/Search.settings
