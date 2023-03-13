@@ -177,7 +177,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4353874201159308618}
   animator: {fileID: -8050873842600838050}
   playerAudioController: {fileID: 3271981947384980067}
-  playerRigidbody: {fileID: 4353874201159308615}
+  playerRigidBody: {fileID: 0}
 --- !u!114 &3271981947384980067
 MonoBehaviour:
   m_ObjectHideFlags: 0
