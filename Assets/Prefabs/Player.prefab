@@ -175,7 +175,6 @@ MonoBehaviour:
   mover: {fileID: 4353874201159308612}
   jumper: {fileID: 4353874201159308613}
   spriteRenderer: {fileID: 4353874201159308618}
-  audioSource: {fileID: 0}
   animator: {fileID: -8050873842600838050}
   playerAudioController: {fileID: 3271981947384980067}
 --- !u!114 &3271981947384980067
@@ -192,25 +191,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1828977176
+      Data2: 1250965119
+      Data3: -1948578671
+      Data4: -914109055
+    Path: event:/1 - SFX/Jump
   walkSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1446565443
+      Data2: 1219895562
+      Data3: -922946903
+      Data4: -1510259160
+    Path: event:/1 - SFX/Walk
   landSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 426680896
+      Data2: 1142069219
+      Data3: -633933927
+      Data4: 2107249358
+    Path: event:/1 - SFX/Land
   collect1Sound:
     Guid:
       Data1: 0
