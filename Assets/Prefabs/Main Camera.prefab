@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followedTransform: {fileID: 0}
+  offSet: {x: 0, y: 2, z: 0}
 --- !u!114 &-6819897919953352958
 MonoBehaviour:
   m_ObjectHideFlags: 0
