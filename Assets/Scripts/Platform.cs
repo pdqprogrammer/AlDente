@@ -167,7 +167,7 @@ public class Platform : MonoBehaviour
         //check if player is jumping
         if (collision.gameObject.tag.Equals("Player") && destroyTime >= maxBreakTimer)
         {
-            Destroy(gameObject);
+            animator.SetBool("IsBroken", true);
         }
     }
 
