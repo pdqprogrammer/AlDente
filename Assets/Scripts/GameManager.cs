@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     private float playTime = 0.0f;
 
     public static GameStates CurrentGameState => _Instance.gameState;
+    public static int Score => _Instance.score;
+    public static float PlayTime => _Instance.playTime;
 
     /**UNITY FUNCTIONS**/
     private void Awake()
@@ -30,24 +32,29 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         //Listen for key press and reset the scene
-        if (Input.GetKeyUp(KeyCode.Alpha0) /*&& gameState != GameStates.INGAME*/)
+        if (Input.GetKeyUp(KeyCode.Escape) && gameState != GameStates.INGAME)
         {
             ResetGame();
         }
 
-        if (Input.GetKeyUp(KeyCode.Escape) && gameState == GameStates.INGAME)
+        if (Input.GetKeyUp(KeyCode.P) && gameState == GameStates.INGAME)
         {
             ChangeGameState(GameStates.PAUSE);
             return;
         }
 
-        if (Input.GetKeyUp(KeyCode.Escape) && gameState == GameStates.PAUSE)
+        if (Input.GetKeyUp(KeyCode.P) && gameState == GameStates.PAUSE)
         {
             ChangeGameState(GameStates.INGAME);
             return;
         }
 
-        if(gameState == GameStates.INGAME)
+        if (Input.GetKeyUp(KeyCode.Space) && gameState == GameStates.MENU)
+        {
+            ChangeGameState(GameStates.INGAME);
+        }
+
+        if (gameState == GameStates.INGAME)
         {
             playTime += Time.deltaTime;
         }
