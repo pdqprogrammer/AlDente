@@ -26,7 +26,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        ChangeGameState(GameStates.INGAME);
+        //gameState = GameStates.INGAME;//TODO remove after testing stage
+        ChangeGameState(CurrentGameState);
     }
 
     private void Update()

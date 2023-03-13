@@ -9,8 +9,18 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Animator animator;
     public PlayerAudioController playerAudioController;
+    public Rigidbody2D playerRigidBody;
 
     private bool setPaused = false;
+
+    private void Start()
+    {
+        if (GameManager.CurrentGameState == GameStates.MENU)
+        {
+            animator.SetBool("IsOnGround", false);
+            animator.SetFloat("YVelocity", -0.21f);
+        }
+    }
 
     // Update is called once per frame, around 60 times a second
     private void Update()
@@ -29,7 +39,16 @@ public class PlayerController : MonoBehaviour
                 }
 
                 setPaused = true;
-                Time.timeScale = 0;
+
+                if(GameManager.CurrentGameState == GameStates.PAUSE || GameManager.CurrentGameState == GameStates.WIN)
+                {
+                    Time.timeScale = 0;
+                }
+                
+                if(GameManager.CurrentGameState == GameStates.GAMEOVER)
+                {
+                    playerRigidBody.bodyType = RigidbodyType2D.Static;
+                }
             }
 
             return;

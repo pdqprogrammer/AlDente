@@ -11,6 +11,10 @@ public class Follower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameManager.CurrentGameState == GameStates.GAMEOVER)
+        {
+            //TODO do not follow so doesnt go with player
+        }
         //Set our position equal to the position of the player
         if (followedTransform != null)
         {
