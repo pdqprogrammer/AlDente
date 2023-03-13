@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1964095482018584292}
   - component: {fileID: 1964095482018584295}
   - component: {fileID: 1964095482018584294}
+  - component: {fileID: -3020562400520888254}
   m_Layer: 0
   m_Name: obstructivewall
   m_TagString: Untagged
@@ -227,3 +228,35 @@ PolygonCollider2D:
       - {x: -0.74, y: 0.78999996}
       - {x: -0.72999996, y: 0.61}
       - {x: -0.71999997, y: 0.62}
+--- !u!114 &-3020562400520888254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964095482018584297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4436c1712a289418aab16c48f76d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformState: 3
+  maxBreakTimer: 1
+  maxDropTimer: 1
+  rotateSpeed: 45
+  dropSpeed: 1
+  canHeat: 1
+  destroyOnJump: 0
+  breakOnStand: 0
+  canDrop: 0
+  isRotating: 0
+  animator: {fileID: 0}
+  firmColor: {r: 1, g: 1, b: 1, a: 1}
+  softColor: {r: 1, g: 1, b: 1, a: 1}
+  fragileColor: {r: 1, g: 1, b: 1, a: 1}
+  wallColor: {r: 1, g: 1, b: 1, a: 1}
+  platformSpriteRenderer: {fileID: 0}
+  breakTime: 0
+  dropTime: 0
+  isDropping: 0
+  isDestroyAnimating: 0

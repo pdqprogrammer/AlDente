@@ -90,7 +90,22 @@ public class Platform : MonoBehaviour
                 transform.Rotate(rotationDirection);
             }
 
-            //TODO add a break timer based on animation state
+            //check if animator is connected otherwise exit
+            if(animator == null)
+            {
+                return;
+            }
+
+            //check animation is playing and if is broken
+            AnimatorStateInfo animatorStateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+            if (animatorStateInfo.IsName("IsBroken"))
+            {
+                if (animatorStateInfo.normalizedTime > 1.0f)
+                {
+                    Destroy(gameObject);
+                }
+            }
         }
     }
 
@@ -125,11 +140,15 @@ public class Platform : MonoBehaviour
             {
                 if (breakOnStand && breakTime <= maxBreakTimer)
                 {
+                    //TODO change animation state to breaking if not
+                    //animator.GetBool("IsBreaking");
+
                     breakTime += Time.deltaTime;
                     if (breakTime >= maxBreakTimer)
                     {
                         //TODO call break animation then destroy the object
                         isDestroyAnimating = true;
+                        //TODO change animation state
                         Destroy(gameObject);
                     }
                 }

@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
     public Mover mover;
     public Jumper jumper;
     public SpriteRenderer spriteRenderer;
-    public AudioSource audioSource;
     public Animator animator;
+    public PlayerAudioController playerAudioController;
 
     private bool setPaused = false;
 
@@ -44,13 +44,21 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("YVelocity", jumper.Velocity.y);
         animator.SetBool("IsOnGround", jumper.IsOnGround());
 
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Landing"))
+        {
+            playerAudioController.PlayAudio(SoundStates.LAND);
+        }
+
         //Listen for key presses and move left
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             mover.AccelerateInDirection(new Vector2(-1, 0));
             spriteRenderer.flipX = true;
             animator.SetBool("Walking", true);
-            
+            if (jumper.IsOnGround())
+            {
+                playerAudioController.PlayAudio(SoundStates.WALK);
+            }
         }
 
         //Listen for key presses and move right
@@ -59,11 +67,17 @@ public class PlayerController : MonoBehaviour
             mover.AccelerateInDirection(new Vector2(1, 0));
             spriteRenderer.flipX = false;
             animator.SetBool("Walking", true);
+            if (jumper.IsOnGround())
+            {
+                playerAudioController.PlayAudio(SoundStates.WALK);
+            }
         }
 
         if(Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A) ||
             Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D))
         {
+            mover.StopAcceleration();
+            playerAudioController.StopWalkAudio();
             animator.SetBool("Walking", false);
         }
 
@@ -73,10 +87,8 @@ public class PlayerController : MonoBehaviour
             jumper.Jump();
 
             //Play a Jump Sound
-            if (audioSource != null)
-            {
-                audioSource.Play();
-            }
+            playerAudioController.PlayAudio(SoundStates.JUMP);
+            playerAudioController.StopWalkAudio();
         }
 
         //TODO see what this does

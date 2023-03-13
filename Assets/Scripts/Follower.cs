@@ -15,6 +15,7 @@ public class Follower : MonoBehaviour
         {
             Vector3 newPosition = followedTransform.position;
             newPosition.z = transform.position.z;
+            newPosition.x = transform.position.x;
 
             //Set our position equal to the new position
             transform.position = newPosition;
