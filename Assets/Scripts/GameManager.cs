@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private string sceneName;
     private int score = 0;
+    private float playTime = 0.0f;
 
     public static GameStates CurrentGameState => _Instance.gameState;
 
@@ -44,6 +45,11 @@ public class GameManager : MonoBehaviour
         {
             ChangeGameState(GameStates.INGAME);
             return;
+        }
+
+        if(gameState == GameStates.INGAME)
+        {
+            playTime += Time.deltaTime;
         }
     }
 
