@@ -271,6 +271,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7289508543136582937, guid: fc29424c8bcf75a4e9749ea391f198c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289508543190399046, guid: fc29424c8bcf75a4e9749ea391f198c2, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289508543626695862, guid: fc29424c8bcf75a4e9749ea391f198c2, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289508544109583758, guid: fc29424c8bcf75a4e9749ea391f198c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7289508545089019815, guid: fc29424c8bcf75a4e9749ea391f198c2, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1539,30 +1555,6 @@ PrefabInstance:
     - target: {fileID: 2237825291681879161, guid: 7c006aabb9d787d45ba38affe246e8d7, type: 3}
       propertyPath: m_Name
       value: Heat
-      objectReference: {fileID: 0}
-    - target: {fileID: 4893068640616486330, guid: 7c006aabb9d787d45ba38affe246e8d7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.44586942
-      objectReference: {fileID: 0}
-    - target: {fileID: 4893068640616486330, guid: 7c006aabb9d787d45ba38affe246e8d7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.000993
-      objectReference: {fileID: 0}
-    - target: {fileID: 4893068641423793575, guid: 7c006aabb9d787d45ba38affe246e8d7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.44586942
-      objectReference: {fileID: 0}
-    - target: {fileID: 4893068641423793575, guid: 7c006aabb9d787d45ba38affe246e8d7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.000993
-      objectReference: {fileID: 0}
-    - target: {fileID: 4893068642046634276, guid: 7c006aabb9d787d45ba38affe246e8d7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.44586942
-      objectReference: {fileID: 0}
-    - target: {fileID: 4893068642046634276, guid: 7c006aabb9d787d45ba38affe246e8d7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.000993
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c006aabb9d787d45ba38affe246e8d7, type: 3}
