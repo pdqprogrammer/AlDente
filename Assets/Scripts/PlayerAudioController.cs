@@ -73,7 +73,7 @@ public class PlayerAudioController : MonoBehaviour
 
         if (playBackState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
         {
-            walkInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            //walkInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
 
         walkInstance.release();

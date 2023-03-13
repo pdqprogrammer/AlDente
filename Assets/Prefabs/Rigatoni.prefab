@@ -167,10 +167,14 @@ MonoBehaviour:
   canDrop: 0
   isRotating: 0
   animator: {fileID: 8625923268402445606}
+  firmColor: {r: 1, g: 1, b: 1, a: 1}
+  softColor: {r: 1, g: 1, b: 1, a: 1}
+  fragileColor: {r: 1, g: 1, b: 1, a: 1}
+  wallColor: {r: 1, g: 1, b: 1, a: 1}
+  platformSpriteRenderer: {fileID: 5633748249242429448}
   breakTime: 0
   dropTime: 0
   isDropping: 0
-  isDestroyAnimating: 0
 --- !u!95 &8625923268402445606
 Animator:
   serializedVersion: 5

@@ -481,7 +481,7 @@ MonoBehaviour:
   softColor: {r: 1, g: 1, b: 1, a: 1}
   fragileColor: {r: 1, g: 1, b: 1, a: 1}
   wallColor: {r: 1, g: 1, b: 1, a: 1}
-  platformSpriteRenderer: {fileID: 0}
+  platformSpriteRenderer: {fileID: 8160436139745553726}
   breakTime: 0
   dropTime: 0
   isDropping: 0

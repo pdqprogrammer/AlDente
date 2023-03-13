@@ -57,7 +57,6 @@ public class Platform : MonoBehaviour
     public float breakTime = 0.0f;//TEMP Public for viewing
     public float dropTime = 0.0f;//TEMP Public for viewing
     public bool isDropping = false;//TEMP Public for viewing
-    public bool isDestroyAnimating = false;//TEMP Public for viewing
 
     // Start is called before the first frame update
     private void Start()
@@ -99,7 +98,7 @@ public class Platform : MonoBehaviour
             //check animation is playing and if is broken
             AnimatorStateInfo animatorStateInfo = animator.GetCurrentAnimatorStateInfo(0);
 
-            if (animatorStateInfo.IsName("IsBroken"))
+            if (animatorStateInfo.IsName("Broken"))
             {
                 if (animatorStateInfo.normalizedTime > 1.0f)
                 {
@@ -117,11 +116,9 @@ public class Platform : MonoBehaviour
             {
                 //ROLL the dice and decide if it breaks
                 int randomValue = Random.Range(0, 20);
-                if(randomValue <= 5)
+                if(randomValue <= 5 && animator != null)
                 {
-                    //TODO call break animation
-                    isDestroyAnimating = true;
-                    Destroy(gameObject);
+                    animator.SetBool("IsBroken", true);
                 }
             }
 
@@ -136,20 +133,17 @@ public class Platform : MonoBehaviour
     {
         if (GameManager.CurrentGameState == GameStates.INGAME)
         {
+            //check if player on for certain time then switch to broken animation
             if (collision.gameObject.tag.Equals("Player"))
             {
-                if (breakOnStand && breakTime <= maxBreakTimer)
+                if (breakOnStand && breakTime <= maxBreakTimer && animator != null)
                 {
-                    //TODO change animation state to breaking if not
-                    //animator.GetBool("IsBreaking");
+                    animator.SetBool("Breaking", true);
 
                     breakTime += Time.deltaTime;
                     if (breakTime >= maxBreakTimer)
                     {
-                        //TODO call break animation then destroy the object
-                        isDestroyAnimating = true;
-                        //TODO change animation state
-                        Destroy(gameObject);
+                        animator.SetBool("IsBroken", true);
                     }
                 }
             }
