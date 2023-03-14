@@ -36,6 +36,10 @@ public class Heat : MonoBehaviour
                 timeUntilStart -= Time.deltaTime;
             }
         }
+        else if(GameManager.CurrentGameState == GameStates.GAMEOVER || GameManager.CurrentGameState == GameStates.WIN)
+        {
+            emitter.SetParameter("Distance", 0.0f);
+        }
     }
 
     private void SetEmitterDistance()
