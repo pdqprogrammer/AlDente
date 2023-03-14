@@ -8,7 +8,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainGameScene.unity
     guid: 931ba08db8679bb4483ffbbbf8955c09
-  - enabled: 1
-    path: Assets/Scenes/WinScreen.unity
-    guid: ba6d6e4fffa04b34cb9e28de13532b84
   m_configObjects: {}
