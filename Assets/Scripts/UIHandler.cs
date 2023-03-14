@@ -51,11 +51,7 @@ public class UIHandler : MonoBehaviour
 
     public void UpdateScore(int score)
     {
-        if(int.TryParse(scoreText.text, out int currScore))
-        {
-            currScore += score;
-            scoreText.SetText(currScore.ToString());
-        }
+        scoreText.SetText(score.ToString());
     }
 
     public void SetUI(GameStates gameState)
