@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformState: 0
-  maxBreakTimer: 1
+  maxBreakTimer: 0.75
   maxDropTimer: 1
   rotateSpeed: 69
   dropSpeed: 1
