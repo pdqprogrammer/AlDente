@@ -79,13 +79,31 @@ public class UIHandler : MonoBehaviour
             case GameStates.GAMEOVER:
                 gameOverPanelObject.SetActive(true);
                 resetText.gameObject.SetActive(true);
+                SetScoreState();
                 break;
             case GameStates.WIN:
                 winPanelObject.SetActive(true);
                 resetText.gameObject.SetActive(true);
+                SetScoreState();
                 break;
             default:
                 break;
+        }
+    }
+    
+    private void SetScoreState()
+    {
+        if(GameManager.Score > 10)
+        {
+
+        }
+        else if(GameManager.Score > 5)
+        {
+
+        }
+        else
+        {
+
         }
     }
 }

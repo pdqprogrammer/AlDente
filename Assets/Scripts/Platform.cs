@@ -125,6 +125,7 @@ public class Platform : MonoBehaviour
                 int randomValue = Random.Range(0, 20);
                 if(randomValue <= 5 && animator != null)
                 {
+                    animator.SetBool("Breaking", true);
                     animator.SetBool("IsBroken", true);
                 }
             }

@@ -52,7 +52,6 @@ MonoBehaviour:
   heatSpeed: 0
   timeUntilStart: 1
   playerTransform: {fileID: 0}
-  emitterDistance: 1
   emitter: {fileID: 4853955016816728008}
 --- !u!114 &4853955016816728008
 MonoBehaviour:
@@ -112,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8074453523654589951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0029, y: 1.45, z: 2}
+  m_LocalPosition: {x: 0.0029, y: 0.74, z: 2}
   m_LocalScale: {x: 0.031337027, y: 0.366232, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -267,6 +266,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.6901961
       objectReference: {fileID: 0}
+    - target: {fileID: 6695153068064462017, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6695153068064462022, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
       propertyPath: m_Name
       value: HeatHazard_TooClose
@@ -361,6 +364,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.661041
       objectReference: {fileID: 0}
+    - target: {fileID: 6695153068064462017, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6695153068064462022, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
       propertyPath: m_Name
       value: HeatHazard_Close
@@ -437,6 +444,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6695153068064462016, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695153068064462017, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6695153068064462022, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
