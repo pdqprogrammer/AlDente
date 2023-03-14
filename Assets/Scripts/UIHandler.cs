@@ -70,6 +70,14 @@ public class UIHandler : MonoBehaviour
 
     public void UpdateScore(int score)
     {
+        if(score > topScore)
+        {
+            if (ColorUtility.TryParseHtmlString("#EFCE29FF", out Color color))
+            {
+                scoreText.color = color;
+            }
+        }
+
         scoreText.SetText(score.ToString());
     }
 
