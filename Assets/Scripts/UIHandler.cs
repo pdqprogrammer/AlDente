@@ -81,24 +81,24 @@ public class UIHandler : MonoBehaviour
         {
             case GameStates.MENU:
                 menuPanelObject.SetActive(true);
-                startText.gameObject.SetActive(true);
+                //startText.gameObject.SetActive(true);
                 break;
             case GameStates.INGAME:
                 ingamePanelObject.SetActive(true);
                 break;
             case GameStates.PAUSE:
                 pausePanelObject.SetActive(true);
-                unpauseText.gameObject.SetActive(true);
-                resetText.gameObject.SetActive(true);
+                //unpauseText.gameObject.SetActive(true);
+                //resetText.gameObject.SetActive(true);
                 break;
             case GameStates.GAMEOVER:
                 winPanelObject.SetActive(true);
-                resetText.gameObject.SetActive(true);
+                //resetText.gameObject.SetActive(true);
                 SetScoreState(0);
                 break;
             case GameStates.WIN:
                 winPanelObject.SetActive(true);
-                resetText.gameObject.SetActive(true);
+                //resetText.gameObject.SetActive(true);
                 SetScoreState(GameManager.Score);
                 break;
             default:
