@@ -7,6 +7,8 @@ public class PlayerAudioController : MonoBehaviour
     public FMODUnity.EventReference jumpSound;
     public FMODUnity.EventReference walkSound;
     public FMODUnity.EventReference landSound;
+    public FMODUnity.EventReference deathSound;
+    public FMODUnity.EventReference winSound;
 
     public FMOD.Studio.EventInstance walkInstance;
     public FMOD.Studio.EventInstance landInstance;
@@ -51,6 +53,16 @@ public class PlayerAudioController : MonoBehaviour
         }
 
         walkInstance.release();
+    }
+
+    public void PlayDeathAudio()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(deathSound);
+    }
+
+    public void PlayWinAudio()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(winSound);
     }
 }
 

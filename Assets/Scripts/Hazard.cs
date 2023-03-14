@@ -16,6 +16,8 @@ public class Hazard : MonoBehaviour
             if (hazardType == HazardType.DEATH)
             {
                 Debug.Log("Died");
+                PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+                player.Died();
 
                 GameManager.ChangeGameState(GameStates.GAMEOVER);
             }

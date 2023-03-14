@@ -40,14 +40,9 @@ public class PlayerController : MonoBehaviour
 
                 setPaused = true;
 
-                if(GameManager.CurrentGameState == GameStates.PAUSE || GameManager.CurrentGameState == GameStates.WIN)
+                if(GameManager.CurrentGameState == GameStates.PAUSE)
                 {
                     Time.timeScale = 0;
-                }
-                
-                if(GameManager.CurrentGameState == GameStates.GAMEOVER)
-                {
-                    playerRigidBody.bodyType = RigidbodyType2D.Static;
                 }
             }
 
@@ -119,5 +114,20 @@ public class PlayerController : MonoBehaviour
         {
             jumper.SetGravityReduced(false);
         }
+    }
+
+    public void Died()
+    {
+        playerRigidBody.bodyType = RigidbodyType2D.Static;
+        animator.SetBool("IsOnGround", false);
+        animator.SetFloat("YVelocity", -0.21f);
+        spriteRenderer.flipY = true;
+        playerAudioController.PlayDeathAudio();
+    }
+
+    public void Win()
+    {
+        Time.timeScale = 0;
+        playerAudioController.PlayWinAudio();
     }
 }

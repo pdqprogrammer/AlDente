@@ -9,7 +9,7 @@ public class Collectible : MonoBehaviour
     private int score = 10;
 
     [SerializeField]
-    private FMODUnity.EventReference collectSound;
+    private List<FMODUnity.EventReference> collectSounds = new List<FMODUnity.EventReference>();
 
     private bool isCollected = false;
 
@@ -23,9 +23,11 @@ public class Collectible : MonoBehaviour
             {
                 GameManager.IncreaseScore(score);
             }
+
+            int soundChoice = Random.Range(0, collectSounds.Count - 1);
             
             isCollected = true;
-            FMODUnity.RuntimeManager.PlayOneShot(collectSound);
+            FMODUnity.RuntimeManager.PlayOneShot(collectSounds[soundChoice]);
             Debug.Log("Score Increased! " + score);
             Destroy(gameObject);
         }
