@@ -518,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7289508545089019835, guid: fc29424c8bcf75a4e9749ea391f198c2, type: 3}
       propertyPath: topScore
-      value: 450
+      value: 447
       objectReference: {fileID: 0}
     - target: {fileID: 7289508545089019836, guid: fc29424c8bcf75a4e9749ea391f198c2, type: 3}
       propertyPath: m_Name
@@ -3084,10 +3084,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2036968221}
     m_Modifications:
-    - target: {fileID: 4001360644319611380, guid: 0cc972812962ed142abdd002069ae73f, type: 3}
-      propertyPath: maxBreakTimer
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 7227217556922272917, guid: 0cc972812962ed142abdd002069ae73f, type: 3}
       propertyPath: m_Name
       value: Orrechiete
