@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6831495463387363497}
   - component: {fileID: 6831495463387363502}
   - component: {fileID: 6831495463387363503}
+  - component: {fileID: 1893934732916191422}
   m_Layer: 0
   m_Name: fren01
   m_TagString: Untagged
@@ -273,3 +274,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1893934732916191422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831495463387363498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4436c1712a289418aab16c48f76d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformState: 0
+  maxBreakTimer: 1
+  maxDropTimer: 1
+  rotateSpeed: -55
+  dropSpeed: 1
+  canHeat: 0
+  destroyOnJump: 0
+  breakOnStand: 0
+  canDrop: 0
+  isRotating: 1
+  animator: {fileID: 0}
+  firmColor: {r: 1, g: 1, b: 1, a: 1}
+  softColor: {r: 1, g: 1, b: 1, a: 1}
+  fragileColor: {r: 1, g: 1, b: 1, a: 1}
+  wallColor: {r: 1, g: 1, b: 1, a: 1}
+  platformSpriteRenderer: {fileID: 0}
+  breakTime: 0
+  dropTime: 0
+  destroyTime: 0
+  isDropping: 0
+  canDestroy: 0
