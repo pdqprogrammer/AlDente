@@ -177,7 +177,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4353874201159308618}
   animator: {fileID: -8050873842600838050}
   playerAudioController: {fileID: 3271981947384980067}
-  playerRigidBody: {fileID: 0}
+  playerRigidBody: {fileID: 4353874201159308615}
 --- !u!114 &3271981947384980067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,27 +211,6 @@ MonoBehaviour:
       Data3: -633933927
       Data4: 2107249358
     Path: event:/1 - SFX/Land
-  collect1Sound:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  collect2Sound:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  collect3Sound:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
 --- !u!114 &4353874201159308610
 MonoBehaviour:
   m_ObjectHideFlags: 0

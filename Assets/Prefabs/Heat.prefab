@@ -52,6 +52,7 @@ MonoBehaviour:
   heatSpeed: 0
   timeUntilStart: 1
   playerTransform: {fileID: 0}
+  deathTransform: {fileID: 4893068642046634276}
   emitter: {fileID: 4853955016816728008}
 --- !u!114 &4853955016816728008
 MonoBehaviour:

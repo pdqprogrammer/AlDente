@@ -13,7 +13,7 @@ public class Follower : MonoBehaviour
     {
         if(GameManager.CurrentGameState == GameStates.GAMEOVER)
         {
-            //TODO do not follow so doesnt go with player
+            return;
         }
         //Set our position equal to the position of the player
         if (followedTransform != null)

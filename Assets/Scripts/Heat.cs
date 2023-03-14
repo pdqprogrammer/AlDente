@@ -14,6 +14,9 @@ public class Heat : MonoBehaviour
     private Transform playerTransform = null;
 
     [SerializeField]
+    private Transform deathTransform = null;
+
+    [SerializeField]
     private FMODUnity.StudioEventEmitter emitter;
 
     // Update is called once per frame
@@ -37,8 +40,10 @@ public class Heat : MonoBehaviour
 
     private void SetEmitterDistance()
     {
-        Vector2 normalizedDistance = (playerTransform.position - transform.position).normalized;
+        Vector2 normalizedDistance = (playerTransform.position - deathTransform.position).normalized;
+        float distance = Mathf.Clamp((1 - normalizedDistance.y) * 10, 0.0f, 1.0f);
 
-        emitter.SetParameter("Distance", normalizedDistance.y);
+        emitter.SetParameter("Distance", distance);
+        Debug.Log(1 - normalizedDistance.y);
     }
 }
