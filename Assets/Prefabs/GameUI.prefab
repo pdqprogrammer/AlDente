@@ -1802,8 +1802,8 @@ MonoBehaviour:
   unpauseText: {fileID: 7289508544802318931}
   resetText: {fileID: 7289508543472091484}
   scoreText: {fileID: 7289508543626695862}
-  topScore: 666
-  midScore: 333
+  topScore: 555
+  midScore: 5
 --- !u!1 &7289508545155497557
 GameObject:
   m_ObjectHideFlags: 0

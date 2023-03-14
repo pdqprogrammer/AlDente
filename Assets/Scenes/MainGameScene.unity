@@ -2721,11 +2721,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2237825291681879158, guid: 7c006aabb9d787d45ba38affe246e8d7, type: 3}
       propertyPath: heatSpeed
-      value: 1.5
+      value: 1.45
       objectReference: {fileID: 0}
     - target: {fileID: 2237825291681879158, guid: 7c006aabb9d787d45ba38affe246e8d7, type: 3}
       propertyPath: timeUntilStart
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2237825291681879158, guid: 7c006aabb9d787d45ba38affe246e8d7, type: 3}
       propertyPath: playerTransform
