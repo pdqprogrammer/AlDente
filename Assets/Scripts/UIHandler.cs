@@ -110,15 +110,15 @@ public class UIHandler : MonoBehaviour
     {
         if(score > topScore)
         {
-            win01Object.SetActive(false);
+            win01Object.SetActive(true);
         }
         else if(score > midScore)
         {
-            win02Object.SetActive(false);
+            win02Object.SetActive(true);
         }
         else
         {
-            win03Object.SetActive(false);
+            win03Object.SetActive(true);
         }
     }
 }
