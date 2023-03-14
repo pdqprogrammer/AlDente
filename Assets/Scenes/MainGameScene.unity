@@ -1853,7 +1853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uIHandler: {fileID: 97447950}
-  gameState: 2
+  gameState: 0
   sceneName: MainGameScene
 --- !u!4 &694230313
 Transform:
