@@ -22,6 +22,15 @@ public class UIHandler : MonoBehaviour
     [SerializeField]
     private GameObject winPanelObject = null;
 
+    [SerializeField]
+    private GameObject win01Object = null;
+
+    [SerializeField]
+    private GameObject win02Object = null;
+
+    [SerializeField]
+    private GameObject win03Object = null;
+
     [Header("TextComponents")]
 
     [SerializeField]
@@ -36,6 +45,12 @@ public class UIHandler : MonoBehaviour
     [SerializeField]
     private TMP_Text scoreText;
 
+    [SerializeField]
+    private int topScore = 666;
+
+    [SerializeField]
+    private int midScore = 333;
+
     private void TurnOffObjects()
     {
         menuPanelObject.SetActive(false);
@@ -43,6 +58,10 @@ public class UIHandler : MonoBehaviour
         pausePanelObject.SetActive(false);
         gameOverPanelObject.SetActive(false);
         winPanelObject.SetActive(false);
+
+        win01Object.SetActive(false);
+        win02Object.SetActive(false);
+        win03Object.SetActive(false);
 
         startText.gameObject.SetActive(false);       
         unpauseText.gameObject.SetActive(false);
@@ -73,33 +92,33 @@ public class UIHandler : MonoBehaviour
                 resetText.gameObject.SetActive(true);
                 break;
             case GameStates.GAMEOVER:
-                gameOverPanelObject.SetActive(true);
+                winPanelObject.SetActive(true);
                 resetText.gameObject.SetActive(true);
-                SetScoreState();
+                SetScoreState(0);
                 break;
             case GameStates.WIN:
                 winPanelObject.SetActive(true);
                 resetText.gameObject.SetActive(true);
-                SetScoreState();
+                SetScoreState(GameManager.Score);
                 break;
             default:
                 break;
         }
     }
     
-    private void SetScoreState()
+    private void SetScoreState(int score)
     {
-        if(GameManager.Score > 666)
+        if(score > topScore)
         {
-
+            win01Object.SetActive(false);
         }
-        else if(GameManager.Score > 333)
+        else if(score > midScore)
         {
-
+            win02Object.SetActive(false);
         }
         else
         {
-
+            win03Object.SetActive(false);
         }
     }
 }
