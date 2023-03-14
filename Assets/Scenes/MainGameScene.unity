@@ -2767,6 +2767,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heat
       objectReference: {fileID: 0}
+    - target: {fileID: 4893068640616486332, guid: 7c006aabb9d787d45ba38affe246e8d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893068641423793569, guid: 7c006aabb9d787d45ba38affe246e8d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c006aabb9d787d45ba38affe246e8d7, type: 3}
 --- !u!4 &1166236246 stripped
