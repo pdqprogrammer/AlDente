@@ -103,11 +103,11 @@ MonoBehaviour:
   score: 64
   collectSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -352088423
+      Data2: 1202663655
+      Data3: -816971631
+      Data4: -951485926
+    Path: event:/1 - SFX/Collect 1
 --- !u!60 &6831495463387363502
 PolygonCollider2D:
   m_ObjectHideFlags: 0

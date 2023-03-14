@@ -102,11 +102,11 @@ MonoBehaviour:
   score: 64
   collectSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 536992958
+      Data2: 1231987718
+      Data3: -560211538
+      Data4: -2123704040
+    Path: event:/1 - SFX/Collect 3
 --- !u!50 &3965779149003495669
 Rigidbody2D:
   serializedVersion: 4
