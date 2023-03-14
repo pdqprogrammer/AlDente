@@ -211,6 +211,20 @@ MonoBehaviour:
       Data3: -633933927
       Data4: 2107249358
     Path: event:/1 - SFX/Land
+  deathSound:
+    Guid:
+      Data1: -661248991
+      Data2: 1079711700
+      Data3: 703016855
+      Data4: 498839072
+    Path: event:/1 - SFX/Death
+  winSound:
+    Guid:
+      Data1: 1067527673
+      Data2: 1166163558
+      Data3: 436119946
+      Data4: 249593717
+    Path: event:/1 - SFX/Win
 --- !u!114 &4353874201159308610
 MonoBehaviour:
   m_ObjectHideFlags: 0
