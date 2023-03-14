@@ -1378,9 +1378,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436784283}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.71, z: 0.67}
-  m_LocalScale: {x: 1.737, y: 1.737, z: -10}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.0089, y: 0.6774, z: 0.67}
+  m_LocalScale: {x: 0.8686423, y: 0.8686423, z: -5.000819}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1389566214}
   m_RootOrder: 0
@@ -1853,7 +1853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uIHandler: {fileID: 97447950}
-  gameState: 2
+  gameState: 0
   sceneName: MainGameScene
 --- !u!4 &694230313
 Transform:
