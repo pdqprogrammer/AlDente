@@ -100,7 +100,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26fc18b5fb15412438eb311a2da16146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
+  score: 64
+  collectSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!60 &6831495463387363502
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -116,8 +123,8 @@ PolygonCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    border: {x: 0, y: 0, z: 0, w: 1.9}
+    pivot: {x: 0.49782306, y: 0.34979102}
     oldSize: {x: 10, y: 10}
     newSize: {x: 10, y: 10}
     adaptiveTilingThreshold: 0.5

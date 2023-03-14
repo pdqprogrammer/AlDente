@@ -103,7 +103,7 @@ MonoBehaviour:
   maxBreakTimer: 1
   maxDropTimer: 35
   rotateSpeed: 45
-  dropSpeed: 1.8
+  dropSpeed: 1.5
   canHeat: 0
   destroyOnJump: 0
   breakOnStand: 0

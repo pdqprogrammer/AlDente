@@ -99,7 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26fc18b5fb15412438eb311a2da16146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
+  score: 73
+  collectSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!60 &4413074853066756219
 PolygonCollider2D:
   m_ObjectHideFlags: 0
