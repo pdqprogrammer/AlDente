@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformState: 0
-  maxBreakTimer: 8
+  maxBreakTimer: 2
   maxDropTimer: 1
   rotateSpeed: 45
   dropSpeed: 1
@@ -117,7 +117,9 @@ MonoBehaviour:
   platformSpriteRenderer: {fileID: 7227217556922272919}
   breakTime: 0
   dropTime: 0
+  destroyTime: 0
   isDropping: 0
+  canDestroy: 0
 --- !u!95 &3757616716657126112
 Animator:
   serializedVersion: 5
