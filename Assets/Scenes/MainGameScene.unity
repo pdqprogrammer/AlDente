@@ -518,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7289508545089019835, guid: fc29424c8bcf75a4e9749ea391f198c2, type: 3}
       propertyPath: topScore
-      value: 447
+      value: 449
       objectReference: {fileID: 0}
     - target: {fileID: 7289508545089019836, guid: fc29424c8bcf75a4e9749ea391f198c2, type: 3}
       propertyPath: m_Name
@@ -2659,10 +2659,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6040034027965476759, guid: f2587c4ceeb45e84cb481fc73fd4f225, type: 3}
-      propertyPath: score
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 7212899584907290814, guid: f2587c4ceeb45e84cb481fc73fd4f225, type: 3}
       propertyPath: m_Name
       value: fren05 (1)
@@ -2749,7 +2745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2237825291681879158, guid: 7c006aabb9d787d45ba38affe246e8d7, type: 3}
       propertyPath: timeUntilStart
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2237825291681879158, guid: 7c006aabb9d787d45ba38affe246e8d7, type: 3}
       propertyPath: playerTransform
