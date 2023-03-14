@@ -399,7 +399,7 @@ MonoBehaviour:
   platformState: 0
   maxBreakTimer: 1
   maxDropTimer: 8
-  rotateSpeed: 45
+  rotateSpeed: -45
   dropSpeed: 2
   canHeat: 0
   destroyOnJump: 0
@@ -414,5 +414,6 @@ MonoBehaviour:
   platformSpriteRenderer: {fileID: 2092889558353242854}
   breakTime: 0
   dropTime: 0
+  destroyTime: 0
   isDropping: 0
-  isDestroyAnimating: 0
+  canDestroy: 0
