@@ -93,11 +93,11 @@ public class UIHandler : MonoBehaviour
     
     private void SetScoreState()
     {
-        if(GameManager.Score > 10)
+        if(GameManager.Score > 666)
         {
 
         }
-        else if(GameManager.Score > 5)
+        else if(GameManager.Score > 333)
         {
 
         }

@@ -11,15 +11,22 @@ public class Collectible : MonoBehaviour
     [SerializeField]
     private FMODUnity.EventReference collectSound;
 
+    private bool isCollected = false;
+
     //Very simple script just listens to see if something touches it
     public void OnTriggerEnter2D(Collider2D collision)
     {
         //If it does touch something, print a message, update score, and destroy object
         if (collision.gameObject.tag.Equals("Player"))
         {
-            GameManager.IncreaseScore(score);
+            if (!isCollected)
+            {
+                GameManager.IncreaseScore(score);
+            }
+            
+            isCollected = true;
             FMODUnity.RuntimeManager.PlayOneShot(collectSound);
-            Debug.Log("Score Increased!");
+            Debug.Log("Score Increased! " + score);
             Destroy(gameObject);
         }
     }
