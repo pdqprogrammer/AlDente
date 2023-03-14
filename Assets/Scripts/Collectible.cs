@@ -8,6 +8,9 @@ public class Collectible : MonoBehaviour
     [SerializeField]
     private int score = 10;
 
+    [SerializeField]
+    private FMODUnity.EventReference collectSound;
+
     //Very simple script just listens to see if something touches it
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,6 +18,7 @@ public class Collectible : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player"))
         {
             GameManager.IncreaseScore(score);
+            FMODUnity.RuntimeManager.PlayOneShot(collectSound);
             Debug.Log("Score Increased!");
             Destroy(gameObject);
         }

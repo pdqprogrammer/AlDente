@@ -7,14 +7,9 @@ public class PlayerAudioController : MonoBehaviour
     public FMODUnity.EventReference jumpSound;
     public FMODUnity.EventReference walkSound;
     public FMODUnity.EventReference landSound;
-    public FMODUnity.EventReference collect1Sound;
-    public FMODUnity.EventReference collect2Sound;
-    public FMODUnity.EventReference collect3Sound;
 
     public FMOD.Studio.EventInstance walkInstance;
     public FMOD.Studio.EventInstance landInstance;
-
-    private int currJumpSound = 0;
 
     public void PlayAudio(SoundStates soundState)
     {
@@ -40,27 +35,6 @@ public class PlayerAudioController : MonoBehaviour
                     landInstance = FMODUnity.RuntimeManager.CreateInstance(landSound);
                     landInstance.start();
                     landInstance.release();
-                }
-                break;
-            case SoundStates.COLLECT:
-                if(currJumpSound == 0)
-                {
-                    FMODUnity.RuntimeManager.PlayOneShot(collect1Sound);
-                }
-                else if(currJumpSound == 1)
-                {
-                    FMODUnity.RuntimeManager.PlayOneShot(collect2Sound);
-                }
-                else
-                {
-                    FMODUnity.RuntimeManager.PlayOneShot(collect3Sound);
-                }
-
-                currJumpSound++;
-
-                if(currJumpSound > 2)
-                {
-                    currJumpSound = 1;
                 }
                 break;
         }

@@ -51,6 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heatSpeed: 0
   timeUntilStart: 1
+  playerTransform: {fileID: 0}
+  emitterDistance: 1
+  emitter: {fileID: 4853955016816728008}
 --- !u!114 &4853955016816728008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,7 +76,7 @@ MonoBehaviour:
     Path: event:/1 - SFX/Bubbles
   Event: 
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -197,6 +200,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2237825291681879159}
     m_Modifications:
     - target: {fileID: 47132578951854731, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
+      propertyPath: emitter
+      value: 
+      objectReference: {fileID: 4853955016816728008}
+    - target: {fileID: 47132578951854731, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
       propertyPath: hazardType
       value: 3
       objectReference: {fileID: 0}
@@ -282,6 +289,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2237825291681879159}
     m_Modifications:
+    - target: {fileID: 47132578951854731, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
+      propertyPath: emitter
+      value: 
+      objectReference: {fileID: 4853955016816728008}
     - target: {fileID: 47132578951854731, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
       propertyPath: hazardType
       value: 3
@@ -372,6 +383,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2237825291681879159}
     m_Modifications:
+    - target: {fileID: 47132578951854731, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
+      propertyPath: emitter
+      value: 
+      objectReference: {fileID: 4853955016816728008}
     - target: {fileID: 6695153068064462016, guid: c54753992abb7344cabc8b4048ba5f37, type: 3}
       propertyPath: m_RootOrder
       value: 2
