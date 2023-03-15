@@ -34,7 +34,14 @@ public class GameManager : MonoBehaviour
         //Listen for key press and reset the scene
         if (Input.GetKeyUp(KeyCode.Escape) && gameState != GameStates.INGAME)
         {
-            ResetGame();
+            if (gameState == GameStates.MENU)
+            {
+                Application.Quit();
+            }
+            else
+            {
+                ResetGame();
+            }
         }
 
         if (Input.GetKeyUp(KeyCode.P) && gameState == GameStates.INGAME)
