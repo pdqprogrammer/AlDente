@@ -48,6 +48,5 @@ public class Heat : MonoBehaviour
         float distance = Mathf.Clamp((1 - normalizedDistance.y) * 10, 0.0f, 1.0f);
 
         emitter.SetParameter("Distance", distance);
-        Debug.Log(1 - normalizedDistance.y);
     }
 }

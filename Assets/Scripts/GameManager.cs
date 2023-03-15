@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     private string sceneName;
     private int score = 0;
     private float playTime = 0.0f;
+    private bool isItalian = false;
 
     public static GameStates CurrentGameState => _Instance.gameState;
     public static int Score => _Instance.score;
@@ -59,6 +60,12 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space) && gameState == GameStates.MENU)
         {
             ChangeGameState(GameStates.INGAME);
+        }
+
+        if (Input.GetKeyUp(KeyCode.L))
+        {
+            isItalian = !isItalian;
+            uIHandler.SetLanguageSettings(isItalian);
         }
 
         if (gameState == GameStates.INGAME)

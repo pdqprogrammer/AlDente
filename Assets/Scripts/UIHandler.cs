@@ -17,30 +17,9 @@ public class UIHandler : MonoBehaviour
     private GameObject pausePanelObject = null;
 
     [SerializeField]
-    private GameObject gameOverPanelObject = null;
-
-    [SerializeField]
     private GameObject winPanelObject = null;
 
-    [SerializeField]
-    private GameObject win01Object = null;
-
-    [SerializeField]
-    private GameObject win02Object = null;
-
-    [SerializeField]
-    private GameObject win03Object = null;
-
     [Header("TextComponents")]
-
-    [SerializeField]
-    private TMP_Text startText;
-
-    [SerializeField]
-    private TMP_Text unpauseText;
-
-    [SerializeField]
-    private TMP_Text resetText;
 
     [SerializeField]
     private TMP_Text scoreText;
@@ -51,21 +30,35 @@ public class UIHandler : MonoBehaviour
     [SerializeField]
     private int midScore = 333;
 
+    [SerializeField]
+    private List<GameObject> englishLanguageObjects = new List<GameObject>();
+
+    [SerializeField]
+    private List<GameObject> italianLanguageObjects = new List<GameObject>();
+
+    [SerializeField]
+    private GameObject[] englishWinObjects = new GameObject[3];
+    [SerializeField]
+    private GameObject[] italianWinObjects = new GameObject[3];
+
+    private bool isItalian = false;
+
     private void TurnOffObjects()
     {
         menuPanelObject.SetActive(false);
         ingamePanelObject.SetActive(false);
         pausePanelObject.SetActive(false);
-        gameOverPanelObject.SetActive(false);
         winPanelObject.SetActive(false);
 
-        win01Object.SetActive(false);
-        win02Object.SetActive(false);
-        win03Object.SetActive(false);
+        for(int i=0; i<englishWinObjects.Length; i++)
+        {
+            englishWinObjects[i].SetActive(false);
+        }
 
-        startText.gameObject.SetActive(false);       
-        unpauseText.gameObject.SetActive(false);
-        resetText.gameObject.SetActive(false);
+        for (int i = 0; i < italianWinObjects.Length; i++)
+        {
+            italianWinObjects[i].SetActive(false);
+        }
     }
 
     public void UpdateScore(int score)
@@ -89,44 +82,81 @@ public class UIHandler : MonoBehaviour
         {
             case GameStates.MENU:
                 menuPanelObject.SetActive(true);
-                //startText.gameObject.SetActive(true);
                 break;
             case GameStates.INGAME:
                 ingamePanelObject.SetActive(true);
                 break;
             case GameStates.PAUSE:
                 pausePanelObject.SetActive(true);
-                //unpauseText.gameObject.SetActive(true);
-                //resetText.gameObject.SetActive(true);
                 break;
             case GameStates.GAMEOVER:
                 winPanelObject.SetActive(true);
-                //resetText.gameObject.SetActive(true);
                 SetScoreState(0);
                 break;
             case GameStates.WIN:
                 winPanelObject.SetActive(true);
-                //resetText.gameObject.SetActive(true);
                 SetScoreState(GameManager.Score);
                 break;
             default:
                 break;
         }
     }
-    
-    private void SetScoreState(int score)
+
+    public void SetLanguageSettings(bool italian)
     {
-        if(score > topScore)
+        //TODO turn on/off italian/english
+        isItalian = italian;
+
+        if (italian)
         {
-            win01Object.SetActive(true);
-        }
-        else if(score > midScore)
-        {
-            win02Object.SetActive(true);
+            foreach (GameObject englishObject in englishLanguageObjects)
+            {
+                englishObject.SetActive(false);
+            }
+
+            foreach (GameObject italianObject in italianLanguageObjects)
+            {
+                italianObject.SetActive(true);
+            }
         }
         else
         {
-            win03Object.SetActive(true);
+            foreach (GameObject italianObject in italianLanguageObjects)
+            {
+                italianObject.SetActive(false);
+            }
+
+            foreach (GameObject englishObject in englishLanguageObjects)
+            {
+                englishObject.SetActive(true);
+            }
+        }
+    }
+    
+    private void SetScoreState(int score)
+    {
+        GameObject[] winLanguageObjects;
+
+        if (isItalian)
+        {
+            winLanguageObjects = italianWinObjects;
+        }
+        else
+        {
+            winLanguageObjects = englishWinObjects;
+        }
+
+        if (score > topScore)
+        {
+            winLanguageObjects[0].SetActive(true);
+        }
+        else if(score > midScore)
+        {
+            winLanguageObjects[1].SetActive(true);
+        }
+        else
+        {
+            winLanguageObjects[2].SetActive(true);
         }
     }
 }
