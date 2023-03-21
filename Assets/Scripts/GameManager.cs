@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         ChangeGameState(CurrentGameState);
+        uIHandler.SetLanguageSettings(isItalian);
     }
 
     private void Update()

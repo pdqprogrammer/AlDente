@@ -107,34 +107,35 @@ public class UIHandler : MonoBehaviour
         //TODO turn on/off italian/english
         isItalian = italian;
 
-        if (italian)
+        foreach (GameObject englishObject in englishLanguageObjects)
         {
-            foreach (GameObject englishObject in englishLanguageObjects)
-            {
-                englishObject.SetActive(false);
-            }
-
-            foreach (GameObject italianObject in italianLanguageObjects)
-            {
-                italianObject.SetActive(true);
-            }
+            englishObject.SetActive(!italian);
         }
-        else
-        {
-            foreach (GameObject italianObject in italianLanguageObjects)
-            {
-                italianObject.SetActive(false);
-            }
 
-            foreach (GameObject englishObject in englishLanguageObjects)
-            {
-                englishObject.SetActive(true);
-            }
+        foreach (GameObject italianObject in italianLanguageObjects)
+        {
+            italianObject.SetActive(italian);
+        }
+
+        if(GameManager.CurrentGameState == GameStates.WIN || GameManager.CurrentGameState == GameStates.GAMEOVER)
+        {
+            SetScoreState(GameManager.Score);
         }
     }
     
     private void SetScoreState(int score)
     {
+        //turn off old objects
+        for(int i=0; i<englishWinObjects.Length; i++)
+        {
+            englishWinObjects[i].SetActive(false);
+        }
+
+        for (int i = 0; i < italianWinObjects.Length; i++)
+        {
+            italianWinObjects[i].SetActive(false);
+        }
+
         GameObject[] winLanguageObjects;
 
         if (isItalian)
