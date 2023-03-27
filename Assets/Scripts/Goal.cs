@@ -15,4 +15,13 @@ public class Goal : MonoBehaviour
             GameManager.ChangeGameState(GameStates.WIN);
         }
     }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Collectible"))
+        {
+            Collectible collectible = collision.gameObject.GetComponent<Collectible>();
+            collectible.StopMoving();
+        }
+    }
 }

@@ -34,6 +34,16 @@ public class Hazard : MonoBehaviour
                 platform.HeatPlatform();
             }
         }
+
+        if (collision.gameObject.tag.Equals("Collectible"))
+        {
+            //if hazard is death then change to death state
+            if (hazardType == HazardType.DEATH)
+            {
+                Collectible collectible = collision.gameObject.GetComponent<Collectible>();
+                collectible.SetBoiled();
+            }
+        }
     }
 
     private enum HazardType

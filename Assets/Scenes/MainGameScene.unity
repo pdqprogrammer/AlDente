@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6986477600974942888, guid: 3a5ccd8678c9e5b4c9f14673c4914920, type: 3}
       propertyPath: m_Size.y
-      value: 15.567959
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -6986477600974942888, guid: 3a5ccd8678c9e5b4c9f14673c4914920, type: 3}
       propertyPath: m_Offset.x
@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6986477600974942888, guid: 3a5ccd8678c9e5b4c9f14673c4914920, type: 3}
       propertyPath: m_Offset.y
-      value: 5.768979
+      value: 17.76898
       objectReference: {fileID: 0}
     - target: {fileID: -6986477600974942888, guid: 3a5ccd8678c9e5b4c9f14673c4914920, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x

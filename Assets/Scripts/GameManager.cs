@@ -22,12 +22,24 @@ public class GameManager : MonoBehaviour
     public static GameStates CurrentGameState => _Instance.gameState;
     public static int Score => _Instance.score;
     public static float PlayTime => _Instance.playTime;
+    public static bool IsItalian => _Instance.isItalian;
 
     /**UNITY FUNCTIONS**/
     private void Awake()
     {
         Instance = this;
         ChangeGameState(CurrentGameState);
+        LanguageSaveData languageSaveData = SaveSystem.LoadData(true);
+
+        if(languageSaveData != null)
+        {
+            isItalian = languageSaveData.IsItalian;
+        }
+        else
+        {
+            SaveSystem.SaveData(isItalian);
+        }
+
         uIHandler.SetLanguageSettings(isItalian);
     }
 
@@ -67,6 +79,7 @@ public class GameManager : MonoBehaviour
         {
             isItalian = !isItalian;
             uIHandler.SetLanguageSettings(isItalian);
+            SaveSystem.SaveData(isItalian);
         }
 
         if (gameState == GameStates.INGAME)
