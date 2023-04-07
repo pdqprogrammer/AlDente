@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8625923268402445606}
   m_Layer: 0
   m_Name: Rigatoni
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,7 +174,9 @@ MonoBehaviour:
   platformSpriteRenderer: {fileID: 5633748249242429448}
   breakTime: 0
   dropTime: 0
+  destroyTime: 0
   isDropping: 0
+  canDestroy: 0
 --- !u!95 &8625923268402445606
 Animator:
   serializedVersion: 5

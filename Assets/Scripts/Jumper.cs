@@ -8,6 +8,8 @@ public class Jumper : MonoBehaviour
     //Our jump force is how high we can actually jump
     public float jumpForce = 6f;
 
+    public float fallMultiplier = 1.0f;
+
     // Distance from the ground that the raycast to check for ground collision will be
     public float groundCheckOffset = 0f;
 
@@ -26,6 +28,7 @@ public class Jumper : MonoBehaviour
     //In this script, the other scripts it needs are grabbed automatically. So we can make them private
     //Private variables are not visible in the inspector, but they still exist
     private Rigidbody2D myRigidBody2D;
+    private Vector2 velocityGravity;
 
     public Vector2 Velocity => myRigidBody2D.velocity;
 
@@ -33,21 +36,22 @@ public class Jumper : MonoBehaviour
     {
         //This script needs a rigidbody2d and a ground detector attached to the same object to work
         myRigidBody2D = GetComponent<Rigidbody2D>();
+        velocityGravity = new Vector2(0, -Physics2D.gravity.y);
     }
 
-    public void SetGravityReduced(bool isGravityReduced)
+    private void Update()
     {
-        if (isGravityReduced)
+        //if (!IsOnGround()) {
+        //  
+        //}
+
+        /*if(myRigidBody2D.velocity.y < 0)
         {
-            myRigidBody2D.gravityScale = gravityScaleWhileJumpHeld;
-        }
-        else
-        {
-            myRigidBody2D.gravityScale = 1;
-        }
+            myRigidBody2D.velocity -= velocityGravity * fallMultiplier * Time.deltaTime;
+        }*/
     }
 
-    public void Jump()
+    public bool Jump()
     {
         //As long as we are on the ground
         if (IsOnGround())
@@ -62,14 +66,18 @@ public class Jumper : MonoBehaviour
             }
 
             //Jump!
-            myRigidBody2D.velocity += new Vector2(0f, jumpForceModified);
+            myRigidBody2D.velocity += new Vector2(myRigidBody2D.velocity.x, jumpForceModified);
 
             //If I'm jumping too fast, slow me down
             if (myRigidBody2D.velocity.y > jumpForceModified)
             {
                 myRigidBody2D.velocity = new Vector2(myRigidBody2D.velocity.x, jumpForceModified);
             }
+
+            return true;
         }
+
+        return false;
     }
 
     // In this function, we raycast downwards to check if we are on the ground
@@ -86,11 +94,14 @@ public class Jumper : MonoBehaviour
         {
             // If this hit ourself, skip this element in the loop
             if (hit.transform == transform) continue;
-            
+
             // Otherwise, if this hit did not hit ourself, then there must be something else below us
             // This could either be the ground or an enemy, but we'll assume it's the ground for simplicity's sake
             // Programmers, you can improve this by having all of the ground tiles be on a single physics layer that this raycast checks for
-            return true;
+            if (hit.transform.tag.Equals("Platform"))
+            {
+                return true;
+            }
         }
 
         // We didn't return true yet, so we aren't on the ground
@@ -114,8 +125,8 @@ public class Jumper : MonoBehaviour
             if (collision.gameObject.tag.Equals("Platform"))
             {
                 //get platform script and if allows for high jump modify jump physics
-                Platform platform = collision.gameObject.GetComponent<Platform>();
-                isJumpModified = platform.IsHighJump();
+                //Platform platform = collision.gameObject.GetComponent<Platform>();
+                //isJumpModified = platform.IsHighJump();
             }
         }
     }

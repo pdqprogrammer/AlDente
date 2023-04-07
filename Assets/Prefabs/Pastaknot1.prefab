@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1275357019700890216}
   m_Layer: 0
   m_Name: Pastaknot1
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

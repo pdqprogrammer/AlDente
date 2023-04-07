@@ -98,21 +98,12 @@ public class PlayerController : MonoBehaviour
         //Listen for key presses and jump
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
         {
-            jumper.Jump();
-
-            //Play a Jump Sound
-            playerAudioController.PlayAudio(SoundStates.JUMP);
-            playerAudioController.StopWalkAudio();
-        }
-
-        //TODO see what this does
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
-        {
-            jumper.SetGravityReduced(true);
-        }
-        else
-        {
-            jumper.SetGravityReduced(false);
+            if (jumper.Jump())
+            {
+                //Play a Jump Sound
+                playerAudioController.PlayAudio(SoundStates.JUMP);
+                playerAudioController.StopWalkAudio();
+            }
         }
     }
 
