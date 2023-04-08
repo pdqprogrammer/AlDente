@@ -147,6 +147,12 @@ public class UIHandler : MonoBehaviour
             winLanguageObjects = englishWinObjects;
         }
 
+        if(GameManager.CurrentGameState == GameStates.GAMEOVER)
+        {
+            winLanguageObjects[2].SetActive(true);
+            return;
+        }
+
         if (score > topScore)
         {
             winLanguageObjects[0].SetActive(true);
